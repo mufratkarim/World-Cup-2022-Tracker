@@ -25,7 +25,7 @@ class GetTeamByIdUseCase @Inject constructor(
         } catch (e: HttpException) {
             emit(Resource.Error<TeamById>(e.localizedMessage ?: Constants.HTTP_ERROR_TEXT))
         } catch (e: IOException) {
-            emit(Resource.Error<TeamById>(Constants.HTTP_ERROR_TEXT))
+            emit(Resource.Error<TeamById>(Constants.SERVER_ERROR_TEXT))
         }
     }
 

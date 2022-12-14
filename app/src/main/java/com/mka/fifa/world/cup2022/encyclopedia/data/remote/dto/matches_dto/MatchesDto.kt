@@ -3,21 +3,21 @@ package com.mka.fifa.world.cup2022.encyclopedia.data.remote.dto.matches_dto
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Matches
 
 data class MatchesDto(
-    val attendance: String,
-    val away_team: AwayTeam,
-    val away_team_country: String,
-    val datetime: String,
-    val home_team: HomeTeam,
-    val home_team_country: String,
-    val id: Int,
-    val last_changed_at: String,
-    val last_checked_at: String,
-    val location: String,
-    val stage_name: String,
-    val status: String,
-    val venue: String,
-    val winner: String,
-    val winner_code: String
+    val attendance: String?,
+    val away_team: AwayTeam?,
+    val away_team_country: String?,
+    val datetime: String?,
+    val home_team: HomeTeam?,
+    val home_team_country: String?,
+    val id: Int?,
+    val last_changed_at: String?,
+    val last_checked_at: String?,
+    val location: String?,
+    val stage_name: String?,
+    val status: String?,
+    val venue: String?,
+    val winner: String?,
+    val winner_code: String?
 )
 
 fun MatchesDto.toMatches(): Matches {

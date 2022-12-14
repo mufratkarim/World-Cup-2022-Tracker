@@ -1,5 +1,6 @@
 package com.mka.fifa.world.cup2022.encyclopedia.presentation.initial_screen.components
 
+import android.service.autofill.OnClickAction
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth

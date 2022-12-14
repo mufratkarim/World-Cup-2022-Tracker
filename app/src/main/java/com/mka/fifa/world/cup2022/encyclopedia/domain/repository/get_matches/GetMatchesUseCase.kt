@@ -23,7 +23,7 @@ class GetMatchesUseCase @Inject constructor(
         } catch (e: HttpException) {
             emit(Resource.Error<List<Matches>>(e.localizedMessage ?: Constants.HTTP_ERROR_TEXT))
         } catch (e: IOException) {
-            emit(Resource.Error<List<Matches>>("Server is down!"))
+            emit(Resource.Error<List<Matches>>(Constants.SERVER_ERROR_TEXT))
         }
     }
 }

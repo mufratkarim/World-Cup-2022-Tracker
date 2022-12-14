@@ -26,7 +26,7 @@ fun InitialTeamsCol(
         modifier = Modifier
             .fillMaxWidth()
             .padding(12.dp)
-            .clickable { navController.navigate(Screen.TeamById.route) }
+            .clickable { navController.navigate(Screen.TeamById.route + "/POR")}
     ) {
         Text(
             text = "Teams",
