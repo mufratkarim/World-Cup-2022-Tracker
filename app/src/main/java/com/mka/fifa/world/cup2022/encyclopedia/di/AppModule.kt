@@ -10,7 +10,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -20,7 +19,7 @@ object AppModule {
     @Singleton
     fun providesWorldCupApi(): WorldCupApi {
         return Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
+            .baseUrl(Constants.WORLD_CUP_JSON)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WorldCupApi::class.java)

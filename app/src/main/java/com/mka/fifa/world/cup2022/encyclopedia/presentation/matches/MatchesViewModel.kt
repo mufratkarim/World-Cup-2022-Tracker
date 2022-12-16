@@ -2,6 +2,7 @@ package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
@@ -23,6 +24,7 @@ class MatchesViewModel @Inject constructor(
 
     init {
         getMatches()
+
     }
     private fun getMatches() {
         getMatchesUseCase().onEach { result ->

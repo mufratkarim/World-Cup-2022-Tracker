@@ -3,6 +3,7 @@ package com.mka.fifa.world.cup2022.encyclopedia.data.remote.model
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.dto.team_by_id_dto.LastMatch
 
 data class TeamById(
+    val country: String,
     val draws: Int,
     val games_played: Int,
     val goals_against: Int,

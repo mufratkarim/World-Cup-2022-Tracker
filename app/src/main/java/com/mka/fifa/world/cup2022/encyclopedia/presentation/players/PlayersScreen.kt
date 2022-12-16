@@ -14,7 +14,7 @@ import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
 fun PlayersScreen() {
-    val url = Constants.WEBVIEW_URL
+    val url = Constants.PLAYERS_STATS_URL
     var backEnabled by remember { mutableStateOf(false) }
     var webView: WebView? = null
     AndroidView(factory = { context ->

@@ -16,4 +16,5 @@ interface WorldCupApi {
 
     @GET("/teams/{teamId}")
     suspend fun getTeamById(@Path("teamId") teamId: String): TeamByIdDto
+
 }

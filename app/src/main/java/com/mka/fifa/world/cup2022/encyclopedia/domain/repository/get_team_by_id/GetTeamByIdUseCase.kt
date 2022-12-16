@@ -16,7 +16,6 @@ import javax.inject.Inject
 class GetTeamByIdUseCase @Inject constructor(
     private val repository: WorldCupRepository
 ) {
-
     operator fun invoke(teamId: String): Flow<Resource<TeamById>> = flow {
         try {
             emit(Resource.Loading<TeamById>())

@@ -28,7 +28,8 @@ fun TeamByIdDto.toTeamById(): TeamById {
         losses = losses,
         name = name,
         wins = wins,
-        goal_differential = goal_differential
+        goal_differential = goal_differential,
+        country = country
     )
 
 }
