@@ -6,11 +6,11 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -29,18 +29,22 @@ fun InitialMatchesCol(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(12.dp)
-            .clickable { navController.navigate(Screen.MatchesScreen.route) },
+            .padding(12.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = "Matches",
-            style = MaterialTheme.typography.h4,
-            color = Color.White,
-            overflow = TextOverflow.Ellipsis,
-            textDecoration = TextDecoration.Underline,
-            fontFamily = FontFamily.Monospace,
-            modifier = Modifier.background(Color.Blue.copy(alpha = 0.3f))
-        )
+        OutlinedButton(
+            onClick = { navController.navigate(Screen.MatchesScreen.route) },
+            colors = ButtonDefaults.buttonColors(backgroundColor = (Color.Blue.copy(alpha = 0.4f)))
+        ) {
+            Text(
+                text = "Matches",
+                style = MaterialTheme.typography.h4,
+                color = Color.White,
+                overflow = TextOverflow.Ellipsis,
+                textDecoration = TextDecoration.Underline,
+                fontFamily = FontFamily.Monospace,
+            )
+        }
+
     }
 }

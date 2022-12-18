@@ -8,9 +8,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
@@ -23,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -45,6 +45,7 @@ fun GroupsItem(
                 .padding(4.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
             items(groups.groups) { group ->
                 Text(
                     text = "Group ${group.letter}",
@@ -59,27 +60,36 @@ fun GroupsItem(
                     Row(
                         modifier = Modifier
                             .fillMaxSize()
+                            .fillMaxWidth()
                             .background(Color.White.copy(0.8f))
-                            .clickable {
-                                navController.navigate(Screen.TeamById.route + "/${it.country}")
-                            }
-                            .padding(12.dp),
-                        horizontalArrangement = Arrangement.Center
+                            .padding(6.dp),
+                        horizontalArrangement = Arrangement.SpaceAround
                     ) {
+                        OutlinedButton(
+                            onClick = { navController.navigate(Screen.TeamById.route + "/${it.country}") },
+                            colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondaryVariant),
+                            shape = CircleShape
+                        ) {
+                            Text(
+                                text = it.name, style = MaterialTheme.typography.h5,
+                                color = Color.DarkGray,
+                                modifier = Modifier
+                                    .fillMaxWidth(0.6f)
+                                    .padding(vertical = 6.dp),
+                                fontWeight = FontWeight.Bold,
+                                textDecoration = TextDecoration.Underline,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+
                         Text(
-                            text = it.name, style = MaterialTheme.typography.h5,
+                            text = "${it.group_points} points", style = MaterialTheme.typography.h6,
                             color = Color.DarkGray,
                             modifier = Modifier
-                                .padding(vertical = 6.dp),
-                            fontWeight = FontWeight.Bold,
-                            textDecoration = TextDecoration.Underline
+                                .fillMaxWidth()
+                                .padding(12.dp)
                         )
-                        Text(
-                            text = ": ${it.group_points} points", style = MaterialTheme.typography.h5,
-                            color = Color.DarkGray,
-                            modifier = Modifier
-                                .padding(vertical = 6.dp)
-                        )
+
                     }
                 }
                 Spacer(modifier = Modifier.size(4.dp))

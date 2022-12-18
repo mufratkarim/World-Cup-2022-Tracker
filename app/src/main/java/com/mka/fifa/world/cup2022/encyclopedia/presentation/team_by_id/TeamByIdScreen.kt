@@ -2,9 +2,7 @@
 
 package com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -41,7 +39,6 @@ fun TeamByIdScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(6.dp)
             .background(
                 Brush.linearGradient(
                     listOf(
@@ -54,7 +51,11 @@ fun TeamByIdScreen(
             )
     ) {
         state.teamById?.let { team ->
-            Column {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+            ) {
                 Image(
                     painter = rememberAsyncImagePainter("https://raw.githubusercontent.com/mufratkarim/mufratkarim/main/flags/${team.country.lowercase()}.png"),
                     contentDescription = "Team ${team.name}",

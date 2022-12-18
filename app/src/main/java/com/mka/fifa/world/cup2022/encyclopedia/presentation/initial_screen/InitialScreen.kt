@@ -38,8 +38,8 @@ fun InitialScreen(
         )
         Column(modifier = Modifier.fillMaxSize().fillMaxWidth(), verticalArrangement = Arrangement.Center) {
             InitialMatchesCol(navController)
-            InitialGroupsCol(navController)
             InitialTeamsCol(navController)
+            InitialGroupsCol(navController)
             InitialPlayersCol(navController)
         }
 

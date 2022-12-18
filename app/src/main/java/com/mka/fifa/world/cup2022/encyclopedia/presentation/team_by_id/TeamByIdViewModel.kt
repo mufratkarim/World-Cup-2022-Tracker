@@ -24,7 +24,7 @@ class TeamByIdViewModel @Inject constructor(
     val state: State<TeamByIdState> = _state
 
     init {
-        savedStateHandle.get<String>(Constants.PARAM_TEAM_ID)?.let { teamId ->
+        savedStateHandle.get<String>(Constants.PARAM_TEAM_BY_ID)?.let { teamId ->
             getTeamById(teamId)
         }
     }

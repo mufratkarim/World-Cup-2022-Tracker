@@ -5,7 +5,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -27,19 +29,23 @@ fun InitialGroupsCol(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(12.dp)
-            .clickable { navController.navigate(Screen.GroupsScreen.route) },
+            .padding(12.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = "Groups",
-            style = MaterialTheme.typography.h4,
-            color = Color.White,
-            overflow = TextOverflow.Ellipsis,
-            textDecoration = TextDecoration.Underline,
-            fontFamily = FontFamily.Monospace,
-            modifier = Modifier.background(Color.Blue.copy(alpha = 0.25f))
-        )
+        OutlinedButton(
+            onClick = { navController.navigate(Screen.GroupsScreen.route) },
+            colors = ButtonDefaults.buttonColors(Color.Blue.copy(alpha = 0.4f))
+        ) {
+            Text(
+                text = "Groups",
+                style = MaterialTheme.typography.h4,
+                color = Color.White,
+                overflow = TextOverflow.Ellipsis,
+                textDecoration = TextDecoration.Underline,
+                fontFamily = FontFamily.Monospace
+            )
+        }
+
     }
 
 }

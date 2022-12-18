@@ -4,10 +4,9 @@ import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.DropdownMenu
-import androidx.compose.material.DropdownMenuItem
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,55 +14,79 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
 
 @Composable
-fun MatchesDropdownCategory() {
+fun MatchesDropdownCategory(
+    navController: NavController
+) {
     var expanded by remember { mutableStateOf(false) }
-    val items = listOf("↑Date", "↓Date", "Most Goals", "Closest Game")
-    val context = LocalContext.current.applicationContext
-    var selectedIndex by remember { mutableStateOf(0) }
+    val items = listOf("↑Date", "↓Date", "Most Goals", "Closest Game", "↑Home Team", "↑Away Team")
     Box(
         modifier = Modifier
             .fillMaxSize()
             .fillMaxWidth()
             .wrapContentSize(Alignment.TopStart)
-            .padding(top = 12.dp, start = 12.dp)
+            .padding(start = 12.dp)
     ) {
-        Text(
-            items[selectedIndex],
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable(onClick = { expanded = true }),
-            style = MaterialTheme.typography.caption,
-            color = Color.White,
-            fontWeight = FontWeight.Bold
-        )
+        // options button
+        IconButton(onClick = {
+            expanded = true
+        }) {
+            Icon(
+                imageVector = Icons.Default.Refresh ,
+                contentDescription = "Open Options",
+                tint = Color.White
+            )
+        }
+
+        // drop down menu
         DropdownMenu(
             expanded = expanded,
-            onDismissRequest = { expanded = false },
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(
-                    Color.Cyan
-                )
+            onDismissRequest = {
+                expanded = false
+            }
         ) {
-            items.forEachIndexed { index, item ->
-                DropdownMenuItem(onClick = {
-                    selectedIndex = index
-                    expanded = false
-                }) {
-                    Text(text = item)
-                    when (selectedIndex) {
-                        1 -> {
-                            Toast.makeText(context, "Sorting by Date", Toast.LENGTH_SHORT).show()
+            // adding items
+            items.forEachIndexed { itemIndex, itemValue ->
+                DropdownMenuItem(
+                    onClick = {
+                        when (itemIndex) {
+                            0 -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.MatchesByDateScreen.route + "/AESC")
+                            }
+                            1 -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.MatchesByDateScreen.route + "/DESC")
+
+                                //Toast.makeText(context, "Sorting by Date", Toast.LENGTH_SHORT).show()
+                            }
+                            2 -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.MatchesByGoalsScreen.route + "/total_goals")
+
+                            }
+                            3 -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.MatchesByGoalsScreen.route + "/closest_scores")
+
+                            }
+                            4 -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.MatchesByGoalsScreen.route + "/home_team_goals")
+                            }
+                            5 -> {
+                                navController.popBackStack()
+                                navController.navigate(Screen.MatchesByGoalsScreen.route + "/away_team_goals")
+                            }
                         }
-                        2 -> {
-                            Toast.makeText(context, "Sorting by Total Goals", Toast.LENGTH_SHORT).show()
-                        }
-                        3 -> {
-                            Toast.makeText(context, "Sorting by Closest Games", Toast.LENGTH_SHORT).show()
-                        }
-                    }
+                        expanded = false
+                    },
+                    enabled = true
+                ) {
+                    Text(text = itemValue)
                 }
             }
         }
