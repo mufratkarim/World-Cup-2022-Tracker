@@ -28,7 +28,7 @@ fun MatchesDropdownCategory(
             .fillMaxSize()
             .fillMaxWidth()
             .wrapContentSize(Alignment.TopStart)
-            .padding(start = 12.dp)
+
     ) {
         // options button
         IconButton(onClick = {

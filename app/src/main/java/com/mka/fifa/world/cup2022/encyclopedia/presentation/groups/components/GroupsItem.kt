@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -47,14 +48,48 @@ fun GroupsItem(
         ) {
 
             items(groups.groups) { group ->
-                Text(
-                    text = "Group ${group.letter}",
-                    style = MaterialTheme.typography.h3,
-                    fontFamily = FontFamily.Monospace,
-                    color = Color.DarkGray,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.background(Color.White.copy(0.5f))
-                )
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Text(
+                        text = "Group ${group.letter} ",
+                        color = Color.Black,
+                        modifier = Modifier
+                            .fillMaxWidth(0.5f)
+                            .background(Color.White.copy(0.5f)),
+                        textAlign = TextAlign.Center,
+                        fontFamily = FontFamily.Serif,
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.h6
+                    )
+
+                    Text(
+                        text = "Points",
+                        color = Color.Black,
+                        modifier = Modifier
+                            .background(Color.White.copy(0.5f)),
+                        textAlign = TextAlign.Start,
+                        fontFamily = FontFamily.Serif,
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.h6
+                    )
+
+                    Text(
+                        text = "Button",
+                        color = Color.Black,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.White.copy(0.5f)),
+                        textAlign = TextAlign.End,
+                        fontFamily = FontFamily.Serif,
+                        fontWeight = FontWeight.Bold,
+                        style = MaterialTheme.typography.h6
+                    )
+
+
+                }
                 Divider(color = Color.DarkGray, thickness = 2.dp)
                 group.teams.map {
                     Row(
@@ -65,32 +100,42 @@ fun GroupsItem(
                             .padding(6.dp),
                         horizontalArrangement = Arrangement.SpaceAround
                     ) {
-                        OutlinedButton(
-                            onClick = { navController.navigate(Screen.TeamById.route + "/${it.country}") },
-                            colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondaryVariant),
-                            shape = CircleShape
-                        ) {
-                            Text(
-                                text = it.name, style = MaterialTheme.typography.h5,
-                                color = Color.DarkGray,
-                                modifier = Modifier
-                                    .fillMaxWidth(0.6f)
-                                    .padding(vertical = 6.dp),
-                                fontWeight = FontWeight.Bold,
-                                textDecoration = TextDecoration.Underline,
-                                textAlign = TextAlign.Center
-                            )
-                        }
-
                         Text(
-                            text = "${it.group_points} points", style = MaterialTheme.typography.h6,
+                            text = it.name, style = MaterialTheme.typography.h6,
                             color = Color.DarkGray,
                             modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(12.dp)
+                                .fillMaxWidth(0.5f)
+                                .padding(12.dp),
+                            fontWeight = FontWeight.Bold,
+                            textDecoration = TextDecoration.Underline,
+                            textAlign = TextAlign.Center
                         )
 
+                        Text(
+                            text = "${it.group_points}",
+                            color = Color.DarkGray,
+                            modifier = Modifier
+                                .fillMaxWidth(0.70f)
+                                .padding(12.dp),
+                            textAlign = TextAlign.Start
+                        )
+
+
+
+                        OutlinedButton(
+                            onClick = { navController.navigate(Screen.TeamById.route + "/${it.country}") },
+                            shape = CircleShape,
+                            modifier = Modifier
+                                .fillMaxWidth(),
+                            colors = ButtonDefaults.buttonColors(Color.Transparent)
+                        ) {
+                            Text(text ="\uD83D\uDDB2️️", color = Color.Red)
+                        }
+
+
                     }
+
+                    Divider(color = Color.LightGray)
                 }
                 Spacer(modifier = Modifier.size(4.dp))
             }

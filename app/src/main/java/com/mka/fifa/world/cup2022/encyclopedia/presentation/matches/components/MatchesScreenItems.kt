@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Matches
@@ -49,7 +50,8 @@ fun MatchesItems(
                 .padding(top = 6.dp),
             textAlign = TextAlign.Center,
             fontFamily = FontFamily.Serif,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            fontSize = 15.sp
         )
         Text(
             text = "Home - Away",
@@ -59,15 +61,18 @@ fun MatchesItems(
                 .padding(top = 12.dp),
             textAlign = TextAlign.Center,
             fontFamily = FontFamily.Serif,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            fontSize = 15.sp
         )
         Text(
-            text = "Info",
+            text = "Button",
             color = Color.White,
             modifier = Modifier
                 .padding(top = 12.dp, start = 12.dp),
             fontFamily = FontFamily.Serif,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            fontSize = 15.sp
         )
 
         MatchesDropdownCategory(navController)
@@ -81,19 +86,6 @@ fun MatchesItems(
             .padding(bottom = 60.dp)
             .offset(y = 60.dp)
     ) {
-        item {
-            Text(
-                text = "Click below for detailed stats",
-                color = Color.White,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f))
-                    .padding(6.dp),
-                textAlign = TextAlign.Center,
-                fontFamily = FontFamily.Serif,
-                fontWeight = FontWeight.SemiBold
-            )
-        }
         items(state.matches) { item: Matches ->
             MatchesItem(matches = item, navController = navController)
         }

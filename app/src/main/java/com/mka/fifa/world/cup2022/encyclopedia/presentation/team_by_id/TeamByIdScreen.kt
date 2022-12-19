@@ -42,9 +42,8 @@ fun TeamByIdScreen(
             .background(
                 Brush.linearGradient(
                     listOf(
-                        Color.White,
+                        Color.DarkGray,
                         Color.LightGray,
-                        Color.Yellow,
                         Color.Cyan
                     )
                 )
@@ -114,7 +113,7 @@ fun TeamByIdScreen(
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "/${team.group_points} group points",
+                        text = "/${team.group_points} total points",
                         style = MaterialTheme.typography.h6,
                         color = Color.Gray
                     )
@@ -131,7 +130,7 @@ fun TeamByIdScreen(
                 )
                 Row(modifier = Modifier.padding(4.dp)) {
                     Text(
-                        text = "[Home] ${team.last_match.home_team} (${team.last_match.home_team_score})",
+                        text = "[Home]: ${team.last_match.home_team}",
                         style = MaterialTheme.typography.h6,
                         color = Color.Black,
                         modifier = Modifier
@@ -139,7 +138,22 @@ fun TeamByIdScreen(
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = " - [Away] ${team.last_match.away_team} (${team.last_match.away_team_score})",
+                        text = " - [Away]: ${team.last_match.away_team}",
+                        style = MaterialTheme.typography.h6,
+                        color = Color.Gray
+                    )
+                }
+                Row(modifier = Modifier.padding(4.dp)) {
+                    Text(
+                        text = "Result: ",
+                        style = MaterialTheme.typography.h6,
+                        color = Color.Black,
+                        modifier = Modifier
+                            .padding(start = 4.dp),
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = "${team.last_match.home_team_score} - ${team.last_match.away_team_score}",
                         style = MaterialTheme.typography.h6,
                         color = Color.Gray
                     )

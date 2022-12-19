@@ -1,10 +1,12 @@
 package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.components
 
+import android.graphics.Typeface
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,6 +24,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -44,7 +48,8 @@ fun MatchesItem(
 
     Row(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize(),
+        verticalAlignment = CenterVertically
     ) {
         Text(
             text = "${matches.id}.",
@@ -56,65 +61,124 @@ fun MatchesItem(
                 .padding(4.dp),
             textAlign = TextAlign.Center
         )
-        OutlinedButton(
-            onClick = { navController.navigate(Screen.MatchesByIdScreen.route + "/${matches.id}") },
-            colors = ButtonDefaults.buttonColors(Color.DarkGray.copy(alpha = 0.6f)),
-            shape = CircleShape
-        ) {
-            Text(
-                buildAnnotatedString {
-                    append("${matches.home_team?.name} ")
-                    withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                        append("(${matches.home_team?.goals})")
+        Text(
+            buildAnnotatedString {
+
+                withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)) {
+                    append("${matches.home_team?.name}")
+                }
+
+                withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)) {
+                    append(" - ${matches.away_team?.name}")
+                }
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color.Green
+                    )
+                ) {
+                    append("\r\nResult: ")
+                }
+                withStyle(style = SpanStyle(color = Color.Yellow)) {
+                    append("${matches.home_team?.goals} - ${matches.away_team?.goals}")
+                }
+
+                if (matches.home_team?.penalties!! > 0 || matches.away_team?.penalties!! > 0) {
+                    withStyle(
+                        style = SpanStyle(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 18.sp,
+                            color = Color.Green
+                        )
+                    ) {
+                        append("\r\nPenalties: ")
                     }
-                    append(" - ${matches.away_team?.name} ")
-                    withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                        append("(${matches.away_team?.goals})")
+                    withStyle(style = SpanStyle(color = Color.Yellow)) {
+                        append("(${matches.home_team.penalties}) - (${matches.away_team?.penalties})")
                     }
-                    if (matches.home_team?.penalties!! > 0 || matches.away_team?.penalties!! > 0) {
-                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                            append("\r\nPenalties: ")
-                        }
-                        append("${matches.home_team.country}(${matches.home_team.penalties}) - ${matches.away_team?.country}(${matches.away_team?.penalties})")
-                    }
-                    withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                        append("\r\nWinner: ")
-                    }
+
+                }
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color.Green
+                    )
+                ) {
+                    append("\r\nWinner: ")
+                }
+                withStyle(style = SpanStyle(color = Color.Yellow)) {
                     append("${matches.winner}")
-                    withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
-                        append("\r\nAttendance: ")
-                    }
-                    append("${matches.attendance}")
-                },
-                modifier = Modifier
-                    .fillMaxSize(0.7f)
-                    .align(CenterVertically)
-                    .padding(4.dp),
-                textAlign = TextAlign.Center,
-                lineHeight = 24.sp,
-                color = Color.White
-            )
+                }
 
-            Text(
-                text = "${matches.stage_name}\r\n${
-                    matches.datetime?.let { date ->
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = Color.Green
+                    )
+                ) {
+                    append("\r\nTime: ")
+                }
+                withStyle(style = SpanStyle(color = Color.Yellow)) {
+                    append(matches.datetime?.let { date ->
                         val odt = OffsetDateTime.parse(date)
-                        val dtf = DateTimeFormatter.ofPattern("h:mm a\r\nMMM dd", Locale.ENGLISH)
+                        val dtf = DateTimeFormatter.ofPattern("h:mm a, MMM dd", Locale.ENGLISH)
                         dtf.format(odt)
-                    }
-                }",
-                color = Color.White,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(CenterVertically),
-                textAlign = TextAlign.Center,
-                lineHeight = 24.sp,
-                fontFamily = FontFamily.Serif,
-                fontStyle = FontStyle.Italic,
-                fontWeight = FontWeight.SemiBold
-            )
+                    }.toString())
+                }
 
+            },
+            modifier = Modifier
+                .fillMaxSize(0.7f)
+                .align(CenterVertically)
+                .background(Color.DarkGray.copy(0.6f))
+                .padding(4.dp),
+            textAlign = TextAlign.Center,
+            lineHeight = 36.sp,
+            color = Color.Cyan,
+            fontSize = 18.sp
+        )
+        Column(
+        ) {
+            OutlinedButton(
+                onClick = { navController.navigate(Screen.MatchesByIdScreen.route + "/${matches.id}") },
+                colors = ButtonDefaults.buttonColors(
+                    Color.Green.copy(alpha = 0.6f)
+                ),
+                modifier = Modifier.fillMaxWidth(),
+                shape = RectangleShape
+            ) {
+                Text(
+                    text = "Stats",
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.Black,
+                    overflow = TextOverflow.Ellipsis,
+                    textDecoration = TextDecoration.Underline,
+                    fontFamily = FontFamily.Monospace,
+                )
+            }
+
+            OutlinedButton(
+                onClick = { navController.navigate(Screen.MatchesByIdLineupScreen.route + "/${matches.id}") },
+                colors = ButtonDefaults.buttonColors(
+                    Color.Yellow.copy(alpha = 0.6f)
+                ),
+                modifier = Modifier.fillMaxWidth(),
+                shape = RectangleShape
+            ) {
+                Text(
+                    text = "Lineup",
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.Black,
+                    overflow = TextOverflow.Ellipsis,
+                    textDecoration = TextDecoration.Underline,
+                    fontFamily = FontFamily.Monospace,
+                )
+            }
         }
+
 
     }
     Divider(color = Color.LightGray, thickness = 2.dp)

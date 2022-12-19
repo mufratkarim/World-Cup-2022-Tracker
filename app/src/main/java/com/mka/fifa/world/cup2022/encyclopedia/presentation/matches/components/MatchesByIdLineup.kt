@@ -46,7 +46,8 @@ fun MatchesByIdLineup(
         Column(
             modifier = Modifier
                 .fillMaxHeight()
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .background(Color.DarkGray.copy(alpha = 0.6f)),
         ) {
             Row(
                 modifier = Modifier
@@ -54,11 +55,23 @@ fun MatchesByIdLineup(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
+                    text = "Status",
+                    color = Color.White,
+                    modifier = Modifier
+                        .fillMaxWidth(0.20f)
+                        .padding(bottom = 6.dp),
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.h6,
+                    textDecoration = TextDecoration.Underline
+                )
+
+                Text(
                     text = "Team",
                     color = Color.White,
                     modifier = Modifier
-                        .fillMaxWidth(0.33f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
+                        .fillMaxWidth(0.65f)
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -68,25 +81,10 @@ fun MatchesByIdLineup(
                 )
 
                 Text(
-                    text = "Goals",
-                    color = Color.White,
-                    modifier = Modifier
-                        .fillMaxWidth(0.50f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
-                        .padding(bottom = 6.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h6,
-                    textDecoration = TextDecoration.Underline
-                )
-
-                Text(
-                    text = "Formation",
+                    text = "Tactics",
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -97,87 +95,79 @@ fun MatchesByIdLineup(
             }
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "H: ${match.home_team.name}",
-                    color = Color.White,
+                    text = "Home",
+                    color = Color.Green,
                     modifier = Modifier
-                        .fillMaxWidth(0.33f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
+                        .fillMaxWidth(0.20f)
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif
                 )
 
                 Text(
-                    text = " ${match.home_team.goals} ",
-                    color = Color.White,
+                    text = match.home_team.name,
+                    color = Color.Cyan,
                     modifier = Modifier
-                        .fillMaxWidth(0.50f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
+                        .fillMaxWidth(0.65f)
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Normal,
-                    style = MaterialTheme.typography.h6
+                    fontWeight = FontWeight.Normal
                 )
 
                 Text(
                     text = " ${match.home_team_lineup.tactics} ",
-                    color = Color.White,
+                    color = Color.Yellow,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h6
+                    fontWeight = FontWeight.Bold
                 )
             }
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "A: ${match.away_team.name}",
-                    color = Color.White,
+                    text = "Away",
+                    color = Color.Green,
                     modifier = Modifier
-                        .fillMaxWidth(0.33f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
+                        .fillMaxWidth(0.20f)
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif
                 )
 
                 Text(
-                    text = " ${match.away_team.goals} ",
-                    color = Color.White,
+                    text = match.away_team.name,
+                    color = Color.Cyan,
                     modifier = Modifier
-                        .fillMaxWidth(0.50f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
+                        .fillMaxWidth(0.65f)
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Normal,
-                    style = MaterialTheme.typography.h6
+                    fontWeight = FontWeight.Normal
                 )
 
                 Text(
                     text = " ${match.away_team_lineup.tactics} ",
-                    color = Color.White,
+                    color = Color.Yellow,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(bottom = 6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h6
+                    fontWeight = FontWeight.Bold
                 )
             }
 
@@ -193,14 +183,14 @@ fun MatchesByIdLineup(
                         Text(
                             text = "${match.home_team.name} Squad", modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
-                                .padding(bottom = 12.dp),
+                                .background(Color.Cyan)
+                                .padding(bottom = 12.dp, top = 12.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
                             style = MaterialTheme.typography.h5,
                             textDecoration = TextDecoration.Underline,
                             fontWeight = FontWeight.Bold,
-                            color = Color.White
+                            color = Color.Black
                         )
                     }
                 }
@@ -254,25 +244,27 @@ fun MatchesByIdLineup(
                 }
 
                 items(match.home_team_lineup.starting_eleven) { player ->
-                    Row {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.DarkGray.copy(alpha = 0.6f))
+                    ) {
                         Text(
                             text = "${player.shirt_number}.",
                             modifier = Modifier
                                 .fillMaxWidth(0.15f)
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Green
                         )
                         Text(
                             text = player.name, modifier = Modifier
                                 .fillMaxWidth(0.60f)
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Cyan
                         )
                         Text(
                             text = player.position, modifier = Modifier
@@ -281,7 +273,7 @@ fun MatchesByIdLineup(
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Yellow
                         )
                     }
                 }
@@ -292,14 +284,14 @@ fun MatchesByIdLineup(
                         Text(
                             text = "${match.home_team.name}'s In-game Events", modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
+                                .background(Color.Cyan)
                                 .padding(bottom = 12.dp, top = 12.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
                             style = MaterialTheme.typography.h5,
                             textDecoration = TextDecoration.Underline,
                             fontWeight = FontWeight.Bold,
-                            color = Color.White
+                            color = Color.Black
                         )
                     }
                 }
@@ -349,34 +341,37 @@ fun MatchesByIdLineup(
                 }
 
                 items(match.home_team_events) { player ->
-                    Row {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.DarkGray.copy(alpha = 0.6f))
+                    ) {
                         Text(
                             text = player.type_of_event,
                             modifier = Modifier
                                 .fillMaxWidth(0.35f)
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Start,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Green
                         )
                         Text(
-                            text = player.player, modifier = Modifier
+                            text = player.player,
+                            modifier = Modifier
                                 .fillMaxWidth(0.60f)
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Start,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Cyan
                         )
                         Text(
-                            text = player.time, modifier = Modifier
+                            text = player.time,
+                            modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Yellow
                         )
                     }
                 }
@@ -387,14 +382,14 @@ fun MatchesByIdLineup(
                         Text(
                             text = "${match.away_team.name} Squad", modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
+                                .background(Color.Cyan)
                                 .padding(bottom = 12.dp, top = 12.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
                             style = MaterialTheme.typography.h5,
                             textDecoration = TextDecoration.Underline,
                             fontWeight = FontWeight.Bold,
-                            color = Color.White
+                            color = Color.Black
                         )
                     }
                 }
@@ -448,34 +443,37 @@ fun MatchesByIdLineup(
                     }
                 }
                 items(match.away_team_lineup.starting_eleven) { player ->
-                    Row {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.DarkGray.copy(alpha = 0.6f))
+                    ) {
                         Text(
                             text = "${player.shirt_number}.",
                             modifier = Modifier
                                 .fillMaxWidth(0.15f)
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Green
                         )
                         Text(
-                            text = player.name, modifier = Modifier
+                            text = player.name,
+                            modifier = Modifier
                                 .fillMaxWidth(0.60f)
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Cyan
                         )
                         Text(
-                            text = player.position, modifier = Modifier
+                            text = player.position,
+                            modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Yellow
                         )
                     }
                 }
@@ -486,14 +484,14 @@ fun MatchesByIdLineup(
                         Text(
                             text = "${match.away_team.name}'s In-game Events", modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color.DarkGray.copy(alpha = 0.6f))
+                                .background(Color.Cyan)
                                 .padding(bottom = 12.dp, top = 12.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
                             style = MaterialTheme.typography.h5,
                             textDecoration = TextDecoration.Underline,
                             fontWeight = FontWeight.Bold,
-                            color = Color.White
+                            color = Color.Black
                         )
                     }
                 }
@@ -543,7 +541,11 @@ fun MatchesByIdLineup(
                 }
 
                 items(match.away_team_events) { player ->
-                    Row {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.DarkGray.copy(alpha = 0.6f))
+                    ) {
                         Text(
                             text = player.type_of_event,
                             modifier = Modifier
@@ -552,7 +554,7 @@ fun MatchesByIdLineup(
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Start,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Green
                         )
                         Text(
                             text = player.player, modifier = Modifier
@@ -561,7 +563,7 @@ fun MatchesByIdLineup(
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Start,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Cyan
                         )
                         Text(
                             text = player.time, modifier = Modifier
@@ -570,7 +572,7 @@ fun MatchesByIdLineup(
                                 .padding(bottom = 6.dp),
                             textAlign = TextAlign.Center,
                             fontFamily = FontFamily.Serif,
-                            color = Color.White
+                            color = Color.Yellow
                         )
                     }
                 }

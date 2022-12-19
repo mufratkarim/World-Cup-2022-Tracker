@@ -49,115 +49,7 @@ fun MatchesByIdItems(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f)),
-                horizontalArrangement = Arrangement.Center
-            ) {
-
-                Text(
-                    text = "${match.venue}, ",
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif,
-                    fontWeight = FontWeight.SemiBold
-                )
-
-                Text(
-                    text = match.location,
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.SemiBold
-                )
-
-            }
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f)),
-                horizontalArrangement = Arrangement.Center
-            ) {
-
-                Text(
-                    text = "Attendance: ",
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = match.attendance,
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif
-                )
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f)),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = "Time: ",
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = match.datetime.let { date ->
-                        val odt = OffsetDateTime.parse(date)
-                        val dtf = DateTimeFormatter.ofPattern("h:mm a, MMM dd", Locale.ENGLISH)
-                        dtf.format(odt)
-                    },
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif
-                )
-            }
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f)),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = "Winner: ",
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = match.winner,
-                    color = Color.White,
-                    modifier = Modifier
-                        .padding(top = 12.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif
-                )
-            }
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(12.dp),
+                    .padding(12.dp, bottom = 0.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
@@ -190,75 +82,158 @@ fun MatchesByIdItems(
                     contentScale = ContentScale.Crop
                 )
             }
-            Text(
-                text = "Click below to see the lineups of ${match.home_team.name} and ${match.away_team.name}",
-                color = Color.White,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f))
-                    .padding(6.dp),
-                textAlign = TextAlign.Center,
-                fontFamily = FontFamily.Serif,
-                fontWeight = FontWeight.SemiBold
-            )
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 6.dp),
+                    .background(Color.Cyan)
+                    .padding(6.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                OutlinedButton(
-                    onClick = { navController.navigate(Screen.MatchesByIdLineupScreen.route + "/${match.id}") },
-                    colors = ButtonDefaults.buttonColors(Color.Cyan.copy(alpha = 0.6f)),
-                    shape = CircleShape
-                ) {
-                    Text(
-                        text = " ${match.home_team.name} ",
-                        color = Color.Black,
-                        modifier = Modifier
-                            .fillMaxWidth(0.4f),
-                        textAlign = TextAlign.Center,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.h6
-                    )
 
-                    Text(
-                        text = " VS ",
-                        color = Color.Black,
-                        modifier = Modifier
-                            .fillMaxWidth(0.35f),
-                        textAlign = TextAlign.Center,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.h6
-                    )
+                Text(
+                    text = " ${match.home_team.name} ",
+                    color = Color.Black,
+                    modifier = Modifier
+                        .fillMaxWidth(0.4f),
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.h6
+                )
 
-                    Text(
-                        text = " ${match.away_team.name} ",
-                        color = Color.Black,
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.h6
-                    )
-                }
+                Text(
+                    text = " VS ",
+                    color = Color.Black,
+                    modifier = Modifier
+                        .fillMaxWidth(0.35f),
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.h6
+                )
+
+                Text(
+                    text = " ${match.away_team.name} ",
+                    color = Color.Black,
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    textAlign = TextAlign.End,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold,
+                    style = MaterialTheme.typography.h6
+                )
+
 
             }
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f))
+                    .padding(6.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Winner: ",
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = match.winner,
+                    color = Color.Cyan,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.SansSerif
+                )
+            }
+            Divider(color = Color.LightGray)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f))
+                    .padding(6.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+
+                Text(
+                    text = "${match.venue}, ",
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.SansSerif,
+                    fontWeight = FontWeight.SemiBold
+                )
+
+                Text(
+                    text = match.location,
+                    color = Color.Cyan,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.SemiBold
+                )
+
+            }
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f))
+                    .padding(6.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+
+                Text(
+                    text = "Attendance: ",
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = match.attendance,
+                    color = Color.Cyan,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.SansSerif
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f))
+                    .padding(6.dp),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = "Time: ",
+                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Serif,
+                    fontWeight = FontWeight.Bold
+                )
+                Text(
+                    text = match.datetime.let { date ->
+                        val odt = OffsetDateTime.parse(date)
+                        val dtf = DateTimeFormatter.ofPattern("h:mm a, MMM dd", Locale.ENGLISH)
+                        dtf.format(odt)
+                    },
+                    color = Color.Cyan,
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.SansSerif
+                )
+            }
+            Divider(color = Color.LightGray)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team.goals} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -270,7 +245,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -279,10 +253,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team.goals} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -293,15 +266,15 @@ fun MatchesByIdItems(
             if (match.home_team.penalties > 0 || match.away_team.penalties > 0) {
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .background(Color.DarkGray.copy(alpha = 0.6f)),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = " ${match.home_team.penalties} ",
-                        color = Color.White,
+                        color = Color.Cyan,
                         modifier = Modifier
                             .fillMaxWidth(0.3f)
-                            .background(Color.DarkGray.copy(alpha = 0.6f))
                             .padding(6.dp),
                         textAlign = TextAlign.Center,
                         fontFamily = FontFamily.Serif,
@@ -313,7 +286,6 @@ fun MatchesByIdItems(
                         color = Color.White,
                         modifier = Modifier
                             .fillMaxWidth(0.6f)
-                            .background(Color.DarkGray.copy(alpha = 0.6f))
                             .padding(6.dp),
                         textAlign = TextAlign.Center,
                         fontFamily = FontFamily.Serif,
@@ -322,10 +294,9 @@ fun MatchesByIdItems(
 
                     Text(
                         text = " ${match.away_team.penalties} ",
-                        color = Color.White,
+                        color = Color.Cyan,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color.DarkGray.copy(alpha = 0.6f))
                             .padding(6.dp),
                         textAlign = TextAlign.Center,
                         fontFamily = FontFamily.Serif,
@@ -336,15 +307,15 @@ fun MatchesByIdItems(
             Divider(color = Color.LightGray)
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.attempts_on_goal} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -356,7 +327,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -365,10 +335,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.attempts_on_goal} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -378,15 +347,15 @@ fun MatchesByIdItems(
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.on_target} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -398,7 +367,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -407,10 +375,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.on_target} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -420,15 +387,15 @@ fun MatchesByIdItems(
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.off_target} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -440,7 +407,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -449,10 +415,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.off_target} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -462,15 +427,15 @@ fun MatchesByIdItems(
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.blocked} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -482,7 +447,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -491,10 +455,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.blocked} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -511,7 +474,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.num_passes} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -535,7 +498,7 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.num_passes} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -548,15 +511,15 @@ fun MatchesByIdItems(
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.passes_completed} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -568,7 +531,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -577,10 +539,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.passes_completed} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -597,7 +558,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.fouls_committed} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -639,7 +600,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.yellow_cards} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -663,7 +624,7 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.yellow_cards} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -681,7 +642,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.red_cards} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -705,7 +666,7 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.red_cards} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -723,7 +684,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.offsides} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -747,7 +708,7 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.offsides} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -767,7 +728,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.corners} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -791,7 +752,7 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.corners} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -809,7 +770,7 @@ fun MatchesByIdItems(
             ) {
                 Text(
                     text = " ${match.home_team_statistics.free_kicks} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -833,7 +794,7 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.free_kicks} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.DarkGray.copy(alpha = 0.6f))
@@ -846,15 +807,15 @@ fun MatchesByIdItems(
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.penalties} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -866,7 +827,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -875,10 +835,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.penalties} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -888,15 +847,15 @@ fun MatchesByIdItems(
 
             Row(
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = " ${match.home_team_statistics.penalties_scored} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth(0.3f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -908,7 +867,6 @@ fun MatchesByIdItems(
                     color = Color.White,
                     modifier = Modifier
                         .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,
@@ -917,10 +875,9 @@ fun MatchesByIdItems(
 
                 Text(
                     text = " ${match.away_team_statistics.penalties_scored} ",
-                    color = Color.White,
+                    color = Color.Cyan,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.DarkGray.copy(alpha = 0.6f))
                         .padding(6.dp),
                     textAlign = TextAlign.Center,
                     fontFamily = FontFamily.Serif,

@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
                         composable(route = Screen.GroupsScreen.route) { GroupsScreen(navController) }
                         composable(route = Screen.TeamsScreen.route) { TeamsScreen(navController) }
                         composable(route = Screen.TeamById.route + "/{teamId}") { TeamByIdScreen() }
-                        composable(route = Screen.TeamUpdatesById.route + "/{teamId}") { TeamUpdatesScreen() }
+                        composable(route = Screen.TeamUpdatesById.route + "/{teamId}") { TeamUpdatesScreen(navController) }
                         composable(route = Screen.PlayersScreen.route) { PlayersScreen() }
                     }
                 }
