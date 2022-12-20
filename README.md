@@ -6,7 +6,7 @@
 
 ---
 <div align="center">
-<p>![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/fifa_app_demo.gif)</p>
+![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/fifa_app_demo.gif)
 </div>
 
 ## Features
