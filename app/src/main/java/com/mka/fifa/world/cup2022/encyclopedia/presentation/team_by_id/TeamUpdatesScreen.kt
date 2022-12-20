@@ -114,7 +114,8 @@ fun TeamUpdatesScreen(
                         colors = ButtonDefaults.buttonColors(
                             Color.Green.copy(alpha = 0.6f)
                         ),
-                        shape = RectangleShape
+                        shape = RectangleShape,
+                        modifier = Modifier.fillMaxWidth(0.3f)
                     ) {
                         Text(
                             text = "Stats",
@@ -164,7 +165,8 @@ fun TeamUpdatesScreen(
                         colors = ButtonDefaults.buttonColors(
                             Color.Yellow.copy(alpha = 0.6f)
                         ),
-                        shape = RectangleShape
+                        shape = RectangleShape,
+                        modifier = Modifier.fillMaxWidth()
                     ) {
                         Text(
                             text = "Lineup",
@@ -180,6 +182,39 @@ fun TeamUpdatesScreen(
             }
 
 
+        }
+
+    }
+
+    if (state.error.isNotBlank()) {
+        Row(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = state.error,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+            )
+        }
+
+    }
+
+    if (state.isLoading) {
+        Row(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            CircularProgressIndicator()
         }
 
     }

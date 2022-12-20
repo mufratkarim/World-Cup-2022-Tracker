@@ -31,7 +31,7 @@ fun MatchesByIdItems(
     navController: NavController
 ) {
     Image(
-        painter = painterResource(id = R.drawable.matches),
+        painter = painterResource(id = R.drawable.team4),
         contentDescription = "Matches Image",
         modifier = Modifier
             .fillMaxHeight()
@@ -887,6 +887,39 @@ fun MatchesByIdItems(
 
         }
 
+
+    }
+
+    if (state.error.isNotBlank()) {
+        Row(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = state.error,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+            )
+        }
+
+    }
+
+    if (state.isLoading) {
+        Row(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            CircularProgressIndicator()
+        }
 
     }
 }

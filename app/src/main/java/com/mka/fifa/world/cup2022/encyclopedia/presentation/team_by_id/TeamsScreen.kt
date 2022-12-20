@@ -42,7 +42,7 @@ fun TeamsScreen(
             .fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.teams3),
+            painter = painterResource(id = R.drawable.matches),
             contentDescription = "Matches Image",
             modifier = Modifier.matchParentSize(),
             contentScale = ContentScale.Crop
@@ -120,12 +120,13 @@ fun TeamsScreen(
 
                     Text(
                         text = team.name,
-                        color = Color.Cyan,
+                        color = Color.Black,
                         overflow = TextOverflow.Ellipsis,
                         fontFamily = FontFamily.Serif,
                         modifier = Modifier
                             .fillMaxWidth(0.35f),
-                        fontSize = 14.sp
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold
                     )
 
                     Text(

@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -33,7 +34,7 @@ fun MatchesByIdLineup(
     viewModel: MatchesByIdViewModel = hiltViewModel()
 ) {
     Image(
-        painter = painterResource(id = R.drawable.matches),
+        painter = painterResource(id = R.drawable.team4),
         contentDescription = "Matches Image",
         modifier = Modifier
             .fillMaxHeight()
@@ -579,6 +580,40 @@ fun MatchesByIdLineup(
             }
 
         }
+
+    }
+
+    if (state.error.isNotBlank()) {
+        Row(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = state.error,
+                color = MaterialTheme.colors.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp)
+            )
+        }
+
+    }
+
+    if (state.isLoading) {
+        Row(
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            CircularProgressIndicator()
+        }
+
     }
 
 }
