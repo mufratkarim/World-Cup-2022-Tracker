@@ -1,9 +1,11 @@
 # FIFA-World-Cup-2022-Encyclopedia
+
 An Android App that displays all the specific details of the FIFA World Cup 2022 in a responsive UI framework by enforcing multiple use cases through the usage of Modern Android Libraries and APIs
 
 
 # Technologies
-Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagger - Hilt.![image](https://user-images.githubusercontent.com/37815709/208561308-891ac493-a15a-4d1d-9dcc-2faafce4ed23.png)
+
+Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagger - Hilt.
 
 
 ![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/fifa_app_demo.gif)
