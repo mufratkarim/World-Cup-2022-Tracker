@@ -20,7 +20,7 @@
 
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
     alt="Get it on GitHub"
-    height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/apk/fifa2022v1.apk)
+    height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/apk/fifa2022v1.apk?raw=true)
 
 ## Technologies
 
