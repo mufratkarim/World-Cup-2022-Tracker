@@ -34,6 +34,7 @@ import androidx.navigation.NavController
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Matches
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.ButtonText
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.ui.theme.Shapes
 import java.text.SimpleDateFormat
 import java.time.OffsetDateTime
@@ -150,14 +151,7 @@ fun MatchesItem(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RectangleShape
             ) {
-                Text(
-                    text = "Stats",
-                    style = MaterialTheme.typography.subtitle1,
-                    color = Color.Black,
-                    overflow = TextOverflow.Ellipsis,
-                    textDecoration = TextDecoration.Underline,
-                    fontFamily = FontFamily.Monospace,
-                )
+                ButtonText(title = "Stats", style = MaterialTheme.typography.subtitle1, color = Color.Black)
             }
 
             OutlinedButton(
@@ -168,14 +162,8 @@ fun MatchesItem(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RectangleShape
             ) {
-                Text(
-                    text = "Lineup",
-                    style = MaterialTheme.typography.subtitle1,
-                    color = Color.Black,
-                    overflow = TextOverflow.Ellipsis,
-                    textDecoration = TextDecoration.Underline,
-                    fontFamily = FontFamily.Monospace,
-                )
+                ButtonText(title = "Lineup", style = MaterialTheme.typography.subtitle1, color = Color.Black)
+
             }
         }
 

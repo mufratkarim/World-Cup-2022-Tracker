@@ -21,14 +21,14 @@ import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.MatchesByIdScreenText
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
 @Composable
 fun MatchesByIdItems(
-    state: MatchesByIdState,
-    navController: NavController
+    state: MatchesByIdState
 ) {
     Image(
         painter = painterResource(id = R.drawable.team4),
@@ -61,17 +61,23 @@ fun MatchesByIdItems(
                     contentScale = ContentScale.Crop
                 )
 
-                Text(
-                    text = " ${match.stage_name} ",
-                    color = Color.White,
-                    modifier = Modifier
-                        .fillMaxWidth(0.6f)
-                        .background(Color.DarkGray.copy(alpha = 0.6f)),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h5
+                MatchesByIdScreenText(
+                    title = " ${match.stage_name} ",
+                    screenSize = 0.6f,
+                    style = MaterialTheme.typography.h5,
+                    color = Color.White
                 )
+//                Text(
+//                    text = " ${match.stage_name} ",
+//                    color = Color.White,
+//                    modifier = Modifier
+//                        .fillMaxWidth(0.6f)
+//                        .background(Color.DarkGray.copy(alpha = 0.6f)),
+//                    textAlign = TextAlign.Center,
+//                    fontFamily = FontFamily.Serif,
+//                    fontWeight = FontWeight.Bold,
+//                    style = MaterialTheme.typography.h5
+//                )
 
                 Image(
                     painter = rememberAsyncImagePainter("https://raw.githubusercontent.com/mufratkarim/mufratkarim/main/flags/${match.away_team.country.lowercase()}.png"),
@@ -91,39 +97,27 @@ fun MatchesByIdItems(
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
-                Text(
-                    text = " ${match.home_team.name} ",
-                    color = Color.Black,
-                    modifier = Modifier
-                        .fillMaxWidth(0.4f),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h6
+
+                MatchesByIdScreenText(
+                    title = " ${match.home_team.name} ",
+                    screenSize = 0.4f,
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Black
                 )
 
-                Text(
-                    text = " VS ",
-                    color = Color.Black,
-                    modifier = Modifier
-                        .fillMaxWidth(0.35f),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h6
+                MatchesByIdScreenText(
+                    title = " VS ",
+                    screenSize = 0.35f,
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Black
                 )
 
-                Text(
-                    text = " ${match.away_team.name} ",
-                    color = Color.Black,
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    textAlign = TextAlign.End,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    style = MaterialTheme.typography.h6
+                MatchesByIdScreenText(
+                    title = " ${match.away_team.name} ",
+                    screenSize = 1f,
+                    style = MaterialTheme.typography.h5,
+                    color = Color.Black
                 )
-
 
             }
 
@@ -134,18 +128,19 @@ fun MatchesByIdItems(
                     .padding(6.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
-                Text(
-                    text = "Winner: ",
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold
+
+                MatchesByIdScreenText(
+                    title = "Winner: ",
+                    screenSize = 0.5f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.White
                 )
-                Text(
-                    text = match.winner,
-                    color = Color.Cyan,
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif
+
+                MatchesByIdScreenText(
+                    title = match.winner,
+                    screenSize = 0.5f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.Cyan
                 )
             }
             Divider(color = Color.LightGray)
@@ -157,21 +152,20 @@ fun MatchesByIdItems(
                 horizontalArrangement = Arrangement.Center
             ) {
 
-                Text(
-                    text = "${match.venue}, ",
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif,
-                    fontWeight = FontWeight.SemiBold
+                MatchesByIdScreenText(
+                    title = "${match.venue}, ",
+                    screenSize = 0.5f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.White
                 )
 
-                Text(
-                    text = match.location,
-                    color = Color.Cyan,
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.SemiBold
+                MatchesByIdScreenText(
+                    title = match.location,
+                    screenSize = 0.5f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.Cyan
                 )
+
 
             }
 
@@ -183,18 +177,17 @@ fun MatchesByIdItems(
                 horizontalArrangement = Arrangement.Center
             ) {
 
-                Text(
-                    text = "Attendance: ",
-                    color = Color.White,
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold
+                MatchesByIdScreenText(
+                    title = "Attendance: ",
+                    screenSize = 0.5f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.White
                 )
-                Text(
-                    text = match.attendance,
-                    color = Color.Cyan,
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.SansSerif
+                MatchesByIdScreenText(
+                    title = match.attendance,
+                    screenSize = 0.5f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.White
                 )
             }
             Row(
@@ -229,37 +222,28 @@ fun MatchesByIdItems(
                     .background(Color.DarkGray.copy(alpha = 0.6f)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = " ${match.home_team.goals} ",
-                    color = Color.Cyan,
-                    modifier = Modifier
-                        .fillMaxWidth(0.3f)
-                        .padding(6.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
+                MatchesByIdScreenText(
+                    title = " ${match.home_team.goals} ",
+                    screenSize = 0.3f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.Cyan
+
                 )
 
-                Text(
-                    text = " Goals ",
-                    color = Color.White,
-                    modifier = Modifier
-                        .fillMaxWidth(0.6f)
-                        .padding(6.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
+                MatchesByIdScreenText(
+                    title = " Goals ",
+                    screenSize = 0.6f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.White
+
                 )
 
-                Text(
-                    text = " ${match.away_team.goals} ",
-                    color = Color.Cyan,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(6.dp),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
+                MatchesByIdScreenText(
+                    title = " ${match.away_team.goals} ",
+                    screenSize = 1f,
+                    style = MaterialTheme.typography.subtitle1,
+                    color = Color.Cyan
+
                 )
             }
 

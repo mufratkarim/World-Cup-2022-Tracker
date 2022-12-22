@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.TeamById
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.ButtonText
 
 @Composable
 fun InitialPlayersCol(
@@ -38,17 +39,11 @@ fun InitialPlayersCol(
             onClick = { navController.navigate(Screen.PlayersScreen.route) },
             colors = ButtonDefaults.buttonColors(
                 colorResource(id = R.color.purple_500).copy(0.3f),
-                Color.Blue.copy(alpha = 0.4f)),
+                Color.Blue.copy(alpha = 0.4f)
+            ),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(
-                text = "Players",
-                style = MaterialTheme.typography.h4,
-                color = Color.Cyan,
-                overflow = TextOverflow.Ellipsis,
-                textDecoration = TextDecoration.Underline,
-                fontFamily = FontFamily.Monospace
-            )
+            ButtonText(title = "Players", style = MaterialTheme.typography.h4, color = Color.Cyan)
         }
     }
 }

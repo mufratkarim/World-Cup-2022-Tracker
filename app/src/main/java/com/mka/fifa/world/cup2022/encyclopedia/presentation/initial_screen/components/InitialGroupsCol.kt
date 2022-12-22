@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Groups
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.ButtonText
 
 @Composable
 fun InitialGroupsCol(
@@ -41,14 +42,8 @@ fun InitialGroupsCol(
                 Color.Blue.copy(alpha = 0.4f)),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(
-                text = "Groups",
-                style = MaterialTheme.typography.h4,
-                color = Color.Cyan,
-                overflow = TextOverflow.Ellipsis,
-                textDecoration = TextDecoration.Underline,
-                fontFamily = FontFamily.Monospace
-            )
+            ButtonText(title = "Groups", style = MaterialTheme.typography.h4, color = Color.Cyan)
+
         }
 
     }

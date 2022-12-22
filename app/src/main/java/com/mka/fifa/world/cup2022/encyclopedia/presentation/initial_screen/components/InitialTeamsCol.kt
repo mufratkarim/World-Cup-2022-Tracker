@@ -24,6 +24,7 @@ import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Matches
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.TeamById
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.ButtonText
 
 @Composable
 fun InitialTeamsCol(
@@ -44,14 +45,7 @@ fun InitialTeamsCol(
             modifier = Modifier.fillMaxWidth()
         ) {
 
-            Text(
-                text = "Teams",
-                style = MaterialTheme.typography.h4,
-                color = Color.Cyan,
-                overflow = TextOverflow.Ellipsis,
-                textDecoration = TextDecoration.Underline,
-                fontFamily = FontFamily.Monospace
-            )
+            ButtonText(title = "Teams", style = MaterialTheme.typography.h4, color = Color.Cyan)
         }
     }
 }
