@@ -43,7 +43,7 @@ fun InitialPlayersCol(
             ),
             modifier = Modifier.fillMaxWidth()
         ) {
-            ButtonText(title = "Players", style = MaterialTheme.typography.h4, color = Color.Cyan)
+            ButtonText(title = "Players", style = MaterialTheme.typography.h4, color = colorResource(id = R.color.light_cyan))
         }
     }
 }

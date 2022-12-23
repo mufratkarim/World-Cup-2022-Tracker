@@ -58,7 +58,7 @@ fun MatchesItem(
             modifier = Modifier
                 .fillMaxSize(0.1f)
                 .align(CenterVertically)
-                .background(Color.Cyan.copy(alpha = 0.5f))
+                .background(colorResource(id = R.color.light_cyan).copy(alpha = 0.5f))
                 .padding(4.dp),
             textAlign = TextAlign.Center
         )
@@ -76,12 +76,12 @@ fun MatchesItem(
                     style = SpanStyle(
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
-                        color = Color.Green
+                        color = colorResource(id = R.color.lime)
                     )
                 ) {
                     append("\r\nResult: ")
                 }
-                withStyle(style = SpanStyle(color = Color.Yellow)) {
+                withStyle(style = SpanStyle(color = colorResource(id = R.color.lavender))) {
                     append("${matches.home_team?.goals} - ${matches.away_team?.goals}")
                 }
 
@@ -90,12 +90,12 @@ fun MatchesItem(
                         style = SpanStyle(
                             fontWeight = FontWeight.Bold,
                             fontSize = 18.sp,
-                            color = Color.Green
+                            color = colorResource(id = R.color.lime)
                         )
                     ) {
                         append("\r\nPenalties: ")
                     }
-                    withStyle(style = SpanStyle(color = Color.Yellow)) {
+                    withStyle(style = SpanStyle(color = colorResource(id = R.color.lavender))) {
                         append("(${matches.home_team.penalties}) - (${matches.away_team?.penalties})")
                     }
 
@@ -104,12 +104,12 @@ fun MatchesItem(
                     style = SpanStyle(
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
-                        color = Color.Green
+                        color = colorResource(id = R.color.lime)
                     )
                 ) {
                     append("\r\nWinner: ")
                 }
-                withStyle(style = SpanStyle(color = Color.Yellow)) {
+                withStyle(style = SpanStyle(color = colorResource(id = R.color.lavender))) {
                     append("${matches.winner}")
                 }
 
@@ -117,12 +117,12 @@ fun MatchesItem(
                     style = SpanStyle(
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
-                        color = Color.Green
+                        color = colorResource(id = R.color.lime)
                     )
                 ) {
                     append("\r\nTime: ")
                 }
-                withStyle(style = SpanStyle(color = Color.Yellow)) {
+                withStyle(style = SpanStyle(color = colorResource(id = R.color.lavender))) {
                     append(matches.datetime?.let { date ->
                         val odt = OffsetDateTime.parse(date)
                         val dtf = DateTimeFormatter.ofPattern("h:mm a, MMM dd", Locale.ENGLISH)
@@ -138,7 +138,7 @@ fun MatchesItem(
                 .padding(4.dp),
             textAlign = TextAlign.Center,
             lineHeight = 36.sp,
-            color = Color.Cyan,
+            color = colorResource(id = R.color.light_cyan),
             fontSize = 18.sp
         )
         Column(
@@ -146,7 +146,7 @@ fun MatchesItem(
             OutlinedButton(
                 onClick = { navController.navigate(Screen.MatchesByIdScreen.route + "/${matches.id}") },
                 colors = ButtonDefaults.buttonColors(
-                    Color.Green.copy(alpha = 0.6f)
+                    colorResource(id = R.color.lime).copy(alpha = 0.6f)
                 ),
                 modifier = Modifier.fillMaxWidth(),
                 shape = RectangleShape
@@ -157,7 +157,7 @@ fun MatchesItem(
             OutlinedButton(
                 onClick = { navController.navigate(Screen.MatchesByIdLineupScreen.route + "/${matches.id}") },
                 colors = ButtonDefaults.buttonColors(
-                    Color.Yellow.copy(alpha = 0.6f)
+                    colorResource(id = R.color.lavender).copy(alpha = 0.6f)
                 ),
                 modifier = Modifier.fillMaxWidth(),
                 shape = RectangleShape

@@ -1,5 +1,9 @@
 package com.mka.fifa.world.cup2022.encyclopedia.common
 
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
+
 object Constants {
 
     const val SERVER_ERROR_TEXT = "Server is down"
@@ -10,5 +14,12 @@ object Constants {
     const val PARAM_MATCHES_BY_ID = "matchesById"
     const val PARAM_MATCHES_BY_DATE = "matchesByDate"
     const val PARAM_MATCHES_BY_GOALS = "matchesByGoals"
+
+    fun returnDate(dateTime: String, pattern: String): String {
+
+        val odt = OffsetDateTime.parse(dateTime)
+        val dtf = DateTimeFormatter.ofPattern(pattern, Locale.ENGLISH)
+        return dtf.format(odt)
+    }
 
 }

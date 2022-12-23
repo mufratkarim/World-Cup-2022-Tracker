@@ -30,6 +30,8 @@ import androidx.navigation.NavController
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Groups
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.Heading
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.VerticalDividerThreeRows
 
 @Composable
 fun GroupsItem(
@@ -53,39 +55,17 @@ fun GroupsItem(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    Text(
-                        text = "Group ${group.letter} ",
+                    Heading(
+                        title1 = "Group ${group.letter} ",
+                        title2 = "Points",
+                        title3 = "Button",
+                        backgroundColor = colorResource(id = R.color.lavender),
+                        screenSize1 = 0.4f,
+                        screenSize2 = 0.65f,
+                        screenSize3 = 1f,
+                        style = MaterialTheme.typography.h6,
                         color = Color.Black,
-                        modifier = Modifier
-                            .fillMaxWidth(0.5f)
-                            .background(Color.White.copy(0.5f)),
-                        textAlign = TextAlign.Center,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.h6
-                    )
-
-                    Text(
-                        text = "Points",
-                        color = Color.Black,
-                        modifier = Modifier
-                            .background(Color.White.copy(0.5f)),
-                        textAlign = TextAlign.Start,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.h6
-                    )
-
-                    Text(
-                        text = "Button",
-                        color = Color.Black,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Color.White.copy(0.5f)),
-                        textAlign = TextAlign.End,
-                        fontFamily = FontFamily.Serif,
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.h6
+                        padding = 6
                     )
 
 

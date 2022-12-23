@@ -45,7 +45,7 @@ fun InitialTeamsCol(
             modifier = Modifier.fillMaxWidth()
         ) {
 
-            ButtonText(title = "Teams", style = MaterialTheme.typography.h4, color = Color.Cyan)
+            ButtonText(title = "Teams", style = MaterialTheme.typography.h4, color = colorResource(id = R.color.light_cyan))
         }
     }
 }

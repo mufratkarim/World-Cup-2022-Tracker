@@ -21,7 +21,7 @@ fun MatchesScreenText(title: String, screenSize: Float, padding: Int, fontWeight
             .fillMaxSize(screenSize)
             .padding(top = padding.dp),
         textAlign = TextAlign.Center,
-        fontFamily = FontFamily.Serif,
+        fontFamily = FontFamily.Default,
         fontWeight = fontWeight,
         fontSize = 15.sp
     )

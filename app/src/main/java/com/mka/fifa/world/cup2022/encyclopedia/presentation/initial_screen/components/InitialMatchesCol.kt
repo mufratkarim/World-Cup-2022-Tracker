@@ -42,7 +42,7 @@ fun InitialMatchesCol(
                 Color.Blue.copy(alpha = 0.4f)),
             modifier = Modifier.fillMaxWidth()
         ) {
-            ButtonText(title = "Matches", style = MaterialTheme.typography.h4, color = Color.Cyan)
+            ButtonText(title = "Matches", style = MaterialTheme.typography.h4, color = colorResource(id = R.color.light_cyan))
         }
 
     }
