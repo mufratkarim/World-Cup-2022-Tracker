@@ -1,10 +1,8 @@
 package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -14,19 +12,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import coil.compose.rememberAsyncImagePainter
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.*
-import java.time.OffsetDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.*
 
 @Composable
 fun MatchesByIdItems(
@@ -63,12 +54,13 @@ fun MatchesByIdItems(
                     contentScale = ContentScale.Crop
                 )
 
-                MatchesByIdScreenText(
+                ScreenText(
                     title = " ${match.stage_name} ",
                     screenSize = 0.6f,
                     style = MaterialTheme.typography.h5,
                     color = Color.White,
-                    padding = 3
+                    padding = 3,
+                    fontWeight = FontWeight.Bold
                 )
 
                 Image(
@@ -91,7 +83,8 @@ fun MatchesByIdItems(
                 screenSize3 = 1f,
                 style = MaterialTheme.typography.h6,
                 color = Color.Black,
-                padding = 6
+                padding = 12,
+                fontWeight = FontWeight.Bold
             )
 
             VerticalDividerTwoRows(
@@ -104,7 +97,8 @@ fun MatchesByIdItems(
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
-                padding = 0
+                padding = 6,
+                fontWeight = FontWeight.Bold
             )
             Divider(color = Color.LightGray)
             VerticalDividerTwoRows(
@@ -117,7 +111,8 @@ fun MatchesByIdItems(
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
-                padding = 0
+                padding = 6,
+                fontWeight = FontWeight.Bold
             )
             Divider(color = Color.LightGray)
             VerticalDividerTwoRows(
@@ -130,7 +125,8 @@ fun MatchesByIdItems(
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
-                padding = 0
+                padding = 6,
+                fontWeight = FontWeight.Bold
             )
             Divider(color = Color.LightGray)
             VerticalDividerTwoRows(
@@ -143,7 +139,8 @@ fun MatchesByIdItems(
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
-                padding = 0
+                padding = 6,
+                fontWeight = FontWeight.Bold
             )
             Divider(color = Color.LightGray)
             val time = Constants.returnDate(match.datetime, "h:mm a, MMM dd")
@@ -157,7 +154,8 @@ fun MatchesByIdItems(
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
-                padding = 0
+                padding = 6,
+                fontWeight = FontWeight.Bold
             )
             Divider(color = Color.LightGray)
             VerticalDividerThreeRows(
@@ -420,8 +418,9 @@ fun MatchesByIdItems(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            MatchesScreenText(
+            ScreenText(
                 title = state.error,
+                color = MaterialTheme.colors.error,
                 screenSize = 1f,
                 padding = 20,
                 fontWeight = FontWeight.Bold

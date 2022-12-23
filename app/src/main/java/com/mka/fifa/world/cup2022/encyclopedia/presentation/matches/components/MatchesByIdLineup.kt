@@ -5,8 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
@@ -19,19 +17,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import coil.compose.rememberAsyncImagePainter
 import com.mka.fifa.world.cup2022.encyclopedia.R
-import com.mka.fifa.world.cup2022.encyclopedia.data.remote.dto.matches_dto.StartingEleven
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.Heading
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.MatchesByIdScreenText
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.MatchesScreenText
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common.VerticalDividerThreeRows
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.Heading
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.ScreenText
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.VerticalDividerThreeRows
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.viewmodel.MatchesByIdViewModel
 
 @Composable
@@ -339,7 +333,7 @@ fun MatchesByIdLineup(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            MatchesScreenText(
+            ScreenText(
                 title = state.error,
                 screenSize = 1f,
                 padding = 20,

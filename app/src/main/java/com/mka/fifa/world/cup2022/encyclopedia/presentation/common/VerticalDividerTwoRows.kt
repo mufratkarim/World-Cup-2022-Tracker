@@ -1,13 +1,13 @@
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 
 @Composable
 fun VerticalDividerTwoRows(
@@ -20,7 +20,8 @@ fun VerticalDividerTwoRows(
     color1: Color,
     color2: Color,
     dividerColor: Color,
-    padding: Int
+    padding: Int,
+    fontWeight: FontWeight = FontWeight.Normal
 ) {
     Row(
         modifier = Modifier
@@ -30,8 +31,8 @@ fun VerticalDividerTwoRows(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        MatchesByIdScreenText(title1, screenSize1, style1, color1, padding)
+        ScreenText(title1, screenSize1, padding, style = style1, color = color1, fontWeight = fontWeight)
         VerticalDivider(dividerColor)
-        MatchesByIdScreenText(title2, screenSize2, style2, color2, padding)
+        ScreenText(title2, screenSize2, padding, style = style2, color = color2, fontWeight = fontWeight)
     }
 }

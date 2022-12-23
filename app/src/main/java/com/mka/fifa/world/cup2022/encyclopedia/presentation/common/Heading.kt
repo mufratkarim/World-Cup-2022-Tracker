@@ -1,4 +1,4 @@
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -8,9 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
-import com.mka.fifa.world.cup2022.encyclopedia.R
+import androidx.compose.ui.text.font.FontWeight
 
 @Composable
 fun Heading(
@@ -23,7 +22,8 @@ fun Heading(
     screenSize3: Float,
     style: TextStyle,
     color: Color,
-    padding: Int
+    padding: Int,
+    fontWeight: FontWeight = FontWeight.Normal
 ) {
     Row(
         modifier = Modifier
@@ -32,28 +32,31 @@ fun Heading(
         verticalAlignment = Alignment.CenterVertically
     ) {
 
-        MatchesByIdScreenText(
+        ScreenText(
             title = title1,
             screenSize = screenSize1,
             style = style,
             color = color,
-            padding = padding
+            padding = padding,
+            fontWeight = fontWeight
         )
 
-        MatchesByIdScreenText(
+        ScreenText(
             title = title2,
             screenSize = screenSize2,
             style = style,
             color = color,
-            padding = padding
+            padding = padding,
+            fontWeight = fontWeight
         )
 
-        MatchesByIdScreenText(
+        ScreenText(
             title = title3,
             screenSize = screenSize3,
             style = MaterialTheme.typography.h6,
             color = Color.Black,
-            padding = padding
+            padding = padding,
+            fontWeight = fontWeight
         )
 
     }

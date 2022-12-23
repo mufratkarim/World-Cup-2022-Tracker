@@ -1,4 +1,4 @@
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -33,11 +33,11 @@ fun VerticalDividerThreeRows(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        MatchesByIdScreenText(title1, screenSize1, style, color1, padding)
+        ScreenText(title1, screenSize1, padding, style =  style, color =  color1)
         VerticalDivider(dividerColor)
-        MatchesByIdScreenText(title2, screenSize2, style, color2, padding)
+        ScreenText(title2, screenSize2, padding, style =  style, color =  color2)
         VerticalDivider(dividerColor)
-        MatchesByIdScreenText(title3, screenSize3, style, color3, padding)
+        ScreenText(title3, screenSize3, padding, style =  style, color =  color3)
 
     }
 }

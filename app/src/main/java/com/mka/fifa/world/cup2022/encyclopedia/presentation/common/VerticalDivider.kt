@@ -1,4 +1,4 @@
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.common
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.common
 
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.width
