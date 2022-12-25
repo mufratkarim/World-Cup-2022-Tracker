@@ -7,6 +7,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun VerticalDividerThreeRows(
@@ -21,9 +25,10 @@ fun VerticalDividerThreeRows(
     color2: Color,
     color3: Color,
     dividerColor: Color,
+    height: Dp = 55.dp,
     padding: Int,
-    height: IntrinsicSize = IntrinsicSize.Min
-
+    textDecoration: TextDecoration = TextDecoration.None,
+    fontWeight: FontWeight = FontWeight.Normal
 ) {
     Row(
         modifier = Modifier
@@ -31,13 +36,13 @@ fun VerticalDividerThreeRows(
             .height(height)
             .background(Color.DarkGray.copy(alpha = 0.6f)),
         horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.Top
     ) {
-        ScreenText(title1, screenSize1, padding, style =  style, color =  color1)
+        ScreenText(title1, screenSize1, padding, style =  style, color =  color1, fontWeight = fontWeight, textDecoration = textDecoration)
         VerticalDivider(dividerColor)
-        ScreenText(title2, screenSize2, padding, style =  style, color =  color2)
+        ScreenText(title2, screenSize2, padding, style =  style, color =  color2, fontWeight = fontWeight, textDecoration = textDecoration)
         VerticalDivider(dividerColor)
-        ScreenText(title3, screenSize3, padding, style =  style, color =  color3)
+        ScreenText(title3, screenSize3, padding, style =  style, color =  color3, fontWeight = fontWeight, textDecoration = textDecoration)
 
     }
 }

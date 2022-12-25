@@ -13,6 +13,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.mka.fifa.world.cup2022.encyclopedia.R
@@ -81,10 +82,10 @@ fun MatchesByIdItems(
                 screenSize1 = 0.4f,
                 screenSize2 = 0.35f,
                 screenSize3 = 1f,
-                style = MaterialTheme.typography.h6,
                 color = Color.Black,
-                padding = 12,
-                fontWeight = FontWeight.Bold
+                padding = 6,
+                textAlign1 = TextAlign.Center,
+                style = MaterialTheme.typography.h5
             )
 
             VerticalDividerTwoRows(
@@ -92,8 +93,8 @@ fun MatchesByIdItems(
                 title2 = match.winner,
                 screenSize1 = 0.5f,
                 screenSize2 = 1f,
-                style1 = MaterialTheme.typography.body1,
-                style2 = MaterialTheme.typography.body2,
+                style1 = MaterialTheme.typography.h6,
+                style2 = MaterialTheme.typography.h6,
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
@@ -106,8 +107,8 @@ fun MatchesByIdItems(
                 title2 = match.venue,
                 screenSize1 = 0.5f,
                 screenSize2 = 1f,
-                style1 = MaterialTheme.typography.body1,
-                style2 = MaterialTheme.typography.body2,
+                style1 = MaterialTheme.typography.h6,
+                style2 = MaterialTheme.typography.h6,
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
@@ -120,8 +121,8 @@ fun MatchesByIdItems(
                 title2 = match.location,
                 screenSize1 = 0.5f,
                 screenSize2 = 1f,
-                style1 = MaterialTheme.typography.body1,
-                style2 = MaterialTheme.typography.body2,
+                style1 = MaterialTheme.typography.h6,
+                style2 = MaterialTheme.typography.h6,
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
@@ -134,8 +135,8 @@ fun MatchesByIdItems(
                 title2 = match.attendance,
                 screenSize1 = 0.5f,
                 screenSize2 = 1f,
-                style1 = MaterialTheme.typography.body1,
-                style2 = MaterialTheme.typography.body2,
+                style1 = MaterialTheme.typography.h6,
+                style2 = MaterialTheme.typography.h6,
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,
@@ -149,8 +150,8 @@ fun MatchesByIdItems(
                 title2 = time,
                 screenSize1 = 0.5f,
                 screenSize2 = 1f,
-                style1 = MaterialTheme.typography.body1,
-                style2 = MaterialTheme.typography.body2,
+                style1 = MaterialTheme.typography.h6,
+                style2 = MaterialTheme.typography.h6,
                 color1 = colorResource(id = R.color.lavender),
                 color2 = colorResource(id = R.color.light_cyan),
                 dividerColor = Color.Yellow,

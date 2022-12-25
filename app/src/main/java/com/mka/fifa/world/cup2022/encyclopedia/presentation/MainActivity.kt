@@ -6,17 +6,11 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.groups.GroupsScreen
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.groups.GroupsViewModel
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.initial_screen.InitialScreen
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.MatchesByDateScreen
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.MatchesByGoalsScreen
@@ -24,9 +18,9 @@ import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.MatchesByIdS
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.MatchesScreen
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.components.MatchesByIdLineup
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.players.PlayersScreen
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id.TeamByIdScreen
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id.TeamUpdatesScreen
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id.TeamsScreen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.teams.TeamByIdScreen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.teams.TeamUpdatesScreen
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.teams.TeamsScreen
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.ui.theme.FIFAWorldCup2022EncyclopediaTheme
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -58,7 +58,8 @@ fun MatchesByIdLineup(
                 screenSize3 = 1f,
                 style = MaterialTheme.typography.h6,
                 color = Color.Black,
-                padding = 6
+                padding = 6,
+                textAlign1 = TextAlign.Center
             )
 
             Divider(color = Color.Yellow)
@@ -125,7 +126,8 @@ fun MatchesByIdLineup(
                         screenSize3 = 1f,
                         style = MaterialTheme.typography.h6,
                         color = Color.Black,
-                        padding = 6
+                        padding = 6,
+                        textAlign1 = TextAlign.Center
                     )
 
                 }
@@ -179,7 +181,8 @@ fun MatchesByIdLineup(
                         screenSize3 = 1f,
                         style = MaterialTheme.typography.h6,
                         color = Color.Black,
-                        padding = 6
+                        padding = 6,
+                        textAlign1 = TextAlign.Center
                     )
 
                 }
@@ -236,7 +239,8 @@ fun MatchesByIdLineup(
                         screenSize3 = 1f,
                         style = MaterialTheme.typography.h6,
                         color = Color.Black,
-                        padding = 6
+                        padding = 6,
+                        textAlign1 = TextAlign.Center
                     )
 
                 }
@@ -290,7 +294,8 @@ fun MatchesByIdLineup(
                         screenSize3 = 1f,
                         style = MaterialTheme.typography.h6,
                         color = Color.Black,
-                        padding = 6
+                        padding = 6,
+                        textAlign1 = TextAlign.Center
                     )
 
                 }

@@ -1,6 +1,7 @@
 package com.mka.fifa.world.cup2022.encyclopedia.presentation.common
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -10,6 +11,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -21,18 +23,18 @@ fun ScreenText(
     fontWeight: FontWeight = FontWeight.Normal,
     color: Color = Color.White,
     textAlign: TextAlign = TextAlign.Center,
-    style: TextStyle = TextStyle.Default
+    style: TextStyle = TextStyle.Default,
+    textDecoration: TextDecoration = TextDecoration.None
 ) {
     Text(
         text = title,
         color = color,
-        modifier = Modifier
-            .fillMaxSize(screenSize)
-            .padding(top = padding.dp),
         textAlign = textAlign,
-        fontFamily = FontFamily.Default,
         fontWeight = fontWeight,
-        fontSize = 15.sp,
-        style = style
+        textDecoration = textDecoration,
+        style = style,
+        modifier = Modifier
+            .fillMaxWidth(screenSize)
+            .padding(padding.dp)
     )
 }

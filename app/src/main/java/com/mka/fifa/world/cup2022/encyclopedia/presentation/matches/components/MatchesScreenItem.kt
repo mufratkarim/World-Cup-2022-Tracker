@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
@@ -36,16 +37,31 @@ fun MatchesItem(
             .fillMaxSize(),
         verticalAlignment = CenterVertically
     ) {
-        Text(
-            text = "${matches.id}.",
-            color = Color.Black,
-            modifier = Modifier
-                .fillMaxSize(0.1f)
-                .align(CenterVertically)
-                .background(colorResource(id = R.color.light_cyan).copy(alpha = 0.5f))
-                .padding(4.dp),
-            textAlign = TextAlign.Center
-        )
+
+        Column(
+        ) {
+            OutlinedButton(
+                onClick = { navController.navigate(Screen.MatchesByIdScreen.route + "/${matches.id}") },
+                colors = ButtonDefaults.buttonColors(
+                    colorResource(id = R.color.lime)
+                ),
+                modifier = Modifier.fillMaxWidth(0.3f).fillMaxHeight()
+            ) {
+                ButtonText(title = "Stats", style = MaterialTheme.typography.body1, color = Color.Black)
+            }
+
+            OutlinedButton(
+                onClick = { navController.navigate(Screen.MatchesByIdLineupScreen.route + "/${matches.id}") },
+                colors = ButtonDefaults.buttonColors(
+                    colorResource(id = R.color.lavender)
+                ),
+                modifier = Modifier.fillMaxWidth(0.3f).fillMaxHeight()
+            ) {
+                ButtonText(title = "Lineup", style = MaterialTheme.typography.body1, color = Color.Black)
+
+            }
+        }
+
         Text(
             buildAnnotatedString {
 
@@ -55,6 +71,18 @@ fun MatchesItem(
 
                 withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, fontSize = 18.sp)) {
                     append(" - ${matches.away_team?.name}")
+                }
+                withStyle(
+                    style = SpanStyle(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp,
+                        color = colorResource(id = R.color.lime)
+                    )
+                ) {
+                    append("\r\nMatch Num: ")
+                }
+                withStyle(style = SpanStyle(color = colorResource(id = R.color.lavender))) {
+                    append("${matches.id}")
                 }
                 withStyle(
                     style = SpanStyle(
@@ -116,43 +144,19 @@ fun MatchesItem(
 
             },
             modifier = Modifier
-                .fillMaxSize(0.7f)
+                .fillMaxWidth()
                 .align(CenterVertically)
-                .background(Color.DarkGray.copy(0.6f))
-                .padding(4.dp),
-            textAlign = TextAlign.Center,
+                .background(Color.DarkGray.copy(0.8f))
+                .padding(8.dp),
+            textAlign = TextAlign.Start,
             lineHeight = 36.sp,
             color = colorResource(id = R.color.light_cyan),
-            fontSize = 18.sp
+            fontSize = 18.sp,
+            fontFamily = FontFamily.Serif
         )
-        Column(
-        ) {
-            OutlinedButton(
-                onClick = { navController.navigate(Screen.MatchesByIdScreen.route + "/${matches.id}") },
-                colors = ButtonDefaults.buttonColors(
-                    colorResource(id = R.color.lime).copy(alpha = 0.6f)
-                ),
-                modifier = Modifier.fillMaxWidth(),
-                shape = RectangleShape
-            ) {
-                ButtonText(title = "Stats", style = MaterialTheme.typography.subtitle1, color = Color.Black)
-            }
-
-            OutlinedButton(
-                onClick = { navController.navigate(Screen.MatchesByIdLineupScreen.route + "/${matches.id}") },
-                colors = ButtonDefaults.buttonColors(
-                    colorResource(id = R.color.lavender).copy(alpha = 0.6f)
-                ),
-                modifier = Modifier.fillMaxWidth(),
-                shape = RectangleShape
-            ) {
-                ButtonText(title = "Lineup", style = MaterialTheme.typography.subtitle1, color = Color.Black)
-
-            }
-        }
 
 
     }
     Divider(color = Color.LightGray, thickness = 2.dp)
-    Divider(color = Color.DarkGray, thickness = 6.dp)
+    Divider(color = Color.DarkGray, thickness = 4.dp)
 }

@@ -1,4 +1,4 @@
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.teams
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
 import com.mka.fifa.world.cup2022.encyclopedia.common.Resource
 import com.mka.fifa.world.cup2022.encyclopedia.domain.repository.get_team_by_id.GetTeamByIdUseCase
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id.components.TeamByIdState
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.teams.components.TeamByIdState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

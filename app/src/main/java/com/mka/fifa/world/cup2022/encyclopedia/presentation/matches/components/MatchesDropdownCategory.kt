@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.rounded.DateRange
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,9 +26,9 @@ fun MatchesDropdownCategory(
     val items = listOf("↑Date", "↓Date", "Most Goals", "Closest Game", "↑Home Team", "↑Away Team")
     Box(
         modifier = Modifier
-            .fillMaxSize()
-            .fillMaxWidth()
-            .wrapContentSize(Alignment.TopStart)
+            .fillMaxWidth(1f)
+            .wrapContentSize(Alignment.TopEnd)
+
 
     ) {
         // options button
@@ -35,7 +36,7 @@ fun MatchesDropdownCategory(
             expanded = true
         }) {
             Icon(
-                imageVector = Icons.Default.Refresh ,
+                imageVector = Icons.Filled.Refresh ,
                 contentDescription = "Open Options",
                 tint = Color.White
             )

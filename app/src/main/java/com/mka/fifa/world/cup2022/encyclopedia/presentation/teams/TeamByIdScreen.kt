@@ -1,11 +1,9 @@
 @file:Suppress("RemoveSingleExpressionStringTemplate")
 
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.teams
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -15,18 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.toLowerCase
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
-import com.mka.fifa.world.cup2022.encyclopedia.R
-import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*

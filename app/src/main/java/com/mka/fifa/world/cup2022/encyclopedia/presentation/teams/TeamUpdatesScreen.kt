@@ -1,8 +1,7 @@
-package com.mka.fifa.world.cup2022.encyclopedia.presentation.team_by_id
+package com.mka.fifa.world.cup2022.encyclopedia.presentation.teams
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.FlingBehavior
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -25,7 +24,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.components.MatchesDropdownCategory
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.ScreenText
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.VerticalDivider
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.VerticalDividerThreeRows
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -48,42 +49,24 @@ fun TeamUpdatesScreen(
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()
-            .fillMaxHeight(),
-        contentPadding = PaddingValues(6.dp)
+            .fillMaxHeight()
     ) {
         item {
-            Row {
-                Text(
-                    text = "Match",
-                    color = Color.White,
-                    modifier = Modifier
-                        .fillMaxSize(0.3f),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp
-                )
-                Text(
-                    text = "Result",
-                    color = Color.White,
-                    modifier = Modifier
-                        .fillMaxSize(0.60f),
-                    textAlign = TextAlign.Center,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp
-                )
-                Text(
-                    text = "Winner",
-                    color = Color.White,
-                    fontFamily = FontFamily.Serif,
-                    fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center,
-                    fontSize = 18.sp
-                )
-
-            }
-
+            
+            VerticalDividerThreeRows(
+                title1 = "Match",
+                title2 = "Result",
+                title3 = "Winner",
+                screenSize1 = 0.3f,
+                screenSize2 = 0.60f,
+                screenSize3 = 1f,
+                style = MaterialTheme.typography.h5,
+                color1 = Color.White,
+                color2 = Color.White,
+                color3 = Color.White,
+                dividerColor = Color.Yellow,
+                padding = 6
+            )
             Divider(color = Color.LightGray)
         }
 
@@ -92,8 +75,9 @@ fun TeamUpdatesScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color.DarkGray.copy(alpha = 0.6f))
-                    .padding(6.dp),
+                    .background(Color.DarkGray.copy(alpha = 0.8f))
+                    .padding(6.dp)
+                    .height(120.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
@@ -108,7 +92,6 @@ fun TeamUpdatesScreen(
                         color = Color.Green,
                         fontSize = 15.sp
                     )
-
                     OutlinedButton(
                         onClick = { navController.navigate(Screen.MatchesByIdScreen.route + "/${match.id}") },
                         colors = ButtonDefaults.buttonColors(
@@ -129,6 +112,7 @@ fun TeamUpdatesScreen(
 
                 }
 
+                VerticalDivider(color = Color.Yellow)
 
                 Text(
                     text = "Score: ${match.home_team.goals} - ${match.away_team.goals}"
@@ -149,6 +133,7 @@ fun TeamUpdatesScreen(
                     color = Color.Cyan,
                     fontSize = 15.sp
                 )
+                VerticalDivider(color = Color.Yellow)
                 Column  {
                     Text(
                         text = match.winner, modifier = Modifier
@@ -181,6 +166,8 @@ fun TeamUpdatesScreen(
 
             }
 
+            Divider(color = Color.LightGray)
+
 
         }
 
@@ -194,14 +181,7 @@ fun TeamUpdatesScreen(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = state.error,
-                color = MaterialTheme.colors.error,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 20.dp)
-            )
+            ScreenText(title = state.error, screenSize = 1f, padding = 20)
         }
 
     }

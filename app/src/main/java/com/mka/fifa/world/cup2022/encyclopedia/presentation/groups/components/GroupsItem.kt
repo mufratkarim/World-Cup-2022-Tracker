@@ -22,6 +22,7 @@ import com.mka.fifa.world.cup2022.encyclopedia.R
 import com.mka.fifa.world.cup2022.encyclopedia.data.remote.model.Groups
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.Screen
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.Heading
+import com.mka.fifa.world.cup2022.encyclopedia.presentation.common.VerticalDivider
 
 @Composable
 fun GroupsItem(
@@ -41,34 +42,27 @@ fun GroupsItem(
 
             items(groups.groups) { group ->
 
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    Heading(
-                        title1 = "Group ${group.letter} ",
-                        title2 = "Points",
-                        title3 = "Button",
-                        backgroundColor = colorResource(id = R.color.lavender),
-                        screenSize1 = 0.4f,
-                        screenSize2 = 0.65f,
-                        screenSize3 = 1f,
-                        style = MaterialTheme.typography.h6,
-                        color = Color.Black,
-                        padding = 6
-                    )
-
-
-                }
+                Heading(
+                    title1 = "Group ${group.letter} ",
+                    title2 = "Points",
+                    title3 = "BTN",
+                    backgroundColor = colorResource(id = R.color.lavender),
+                    screenSize1 = 0.5f,
+                    screenSize2 = 0.7f,
+                    screenSize3 = 1f,
+                    style = MaterialTheme.typography.h6,
+                    color = Color.Black,
+                    padding = 6,
+                    textAlign1 = TextAlign.Center,
+                    textAlign2 = TextAlign.Center
+                )
                 Divider(color = Color.DarkGray, thickness = 2.dp)
                 group.teams.map {
                     Row(
                         modifier = Modifier
-                            .fillMaxSize()
                             .fillMaxWidth()
-                            .background(Color.White.copy(0.8f))
-                            .padding(6.dp),
-                        horizontalArrangement = Arrangement.SpaceAround
+                            .background(colorResource(id = R.color.light_cyan).copy(0.6f))
+                            .height(50.dp)
                     ) {
                         Text(
                             text = it.name, style = MaterialTheme.typography.h6,
@@ -80,32 +74,27 @@ fun GroupsItem(
                             textDecoration = TextDecoration.Underline,
                             textAlign = TextAlign.Center
                         )
-
+                        VerticalDivider(color = Color.Gray)
                         Text(
                             text = "${it.group_points}",
                             color = Color.DarkGray,
                             modifier = Modifier
-                                .fillMaxWidth(0.70f)
+                                .fillMaxWidth(0.7f)
                                 .padding(12.dp),
-                            textAlign = TextAlign.Start
+                            textAlign = TextAlign.Center
                         )
-
-
-
+                        VerticalDivider(color = Color.Gray)
                         OutlinedButton(
                             onClick = { navController.navigate(Screen.TeamById.route + "/${it.country}") },
-                            shape = CircleShape,
                             modifier = Modifier
-                                .fillMaxWidth(),
-                            colors = ButtonDefaults.buttonColors(Color.Transparent)
+                                .fillMaxWidth()
                         ) {
                             Text(text ="\uD83D\uDDB2️️", color = Color.Red)
                         }
 
-
                     }
 
-                    Divider(color = Color.LightGray)
+                    Divider(color = Color.Gray)
                 }
                 Spacer(modifier = Modifier.size(4.dp))
             }

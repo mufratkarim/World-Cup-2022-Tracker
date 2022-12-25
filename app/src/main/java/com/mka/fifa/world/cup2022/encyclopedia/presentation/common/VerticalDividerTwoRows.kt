@@ -8,6 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun VerticalDividerTwoRows(
@@ -21,15 +23,17 @@ fun VerticalDividerTwoRows(
     color2: Color,
     dividerColor: Color,
     padding: Int,
+    height: Dp = 55.dp,
     fontWeight: FontWeight = FontWeight.Normal
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .height(IntrinsicSize.Min)
-            .background(Color.DarkGray.copy(alpha = 0.6f)),
+            .height(height)
+            .background(Color.DarkGray.copy(alpha = 0.6f))
+            .padding(6.dp),
         horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.Top
     ) {
         ScreenText(title1, screenSize1, padding, style = style1, color = color1, fontWeight = fontWeight)
         VerticalDivider(dividerColor)
