@@ -55,10 +55,15 @@ Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagg
 
 ## Activities
 
-1. Complied testable, scalable and highly readable code within a Clean Architecture format such as MVVM architecture.
-2. Built intuitive user interfaces by utilizing Jetpack Compose's declarative UI framework with Navigation and Coroutines.
-3. Utilized Retrofit to perform HTTP requests and parse JSON responses from REST APIs.
-4. Applied Dagger-hilt to streamline the management of app dependencies.
+• Utilized the Clean Architecture pattern and MVVM to compile readable, scalable and testable code in Kotlin.
+
+• Designed the application’s UI using Jetpack Compose, resulting in a 15% reduction in development time.
+
+• Implemented Navigation Components to complex navigation flows and transitions, leading to a 20% increase in user retention.
+
+• Applied Retrofit to make HTTP requests and handle responses like parsing of JSON data and error handling.
+
+• Enhanced code maintainability by using Dagger-hilt to streamline the management of app dependencies.
 
 ---
 
