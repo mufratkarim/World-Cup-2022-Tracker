@@ -26,7 +26,7 @@ fun InitialMatchesCol(
         contentAlignment = Alignment.TopStart
     ) {
         OutlinedButton(
-            onClick = { navController.navigate(Screen.MatchesScreen.route) },
+            onClick = { navController.navigate(Screen.MatchesInitialScreen.route) },
             colors = ButtonDefaults.buttonColors(
                 colorResource(id = R.color.purple_500).copy(0.6f),
                 Color.Blue.copy(alpha = 0.4f)),

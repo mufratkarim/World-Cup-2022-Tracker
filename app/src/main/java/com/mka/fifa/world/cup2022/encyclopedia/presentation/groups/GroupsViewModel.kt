@@ -6,10 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mka.fifa.world.cup2022.encyclopedia.common.Constants
 import com.mka.fifa.world.cup2022.encyclopedia.common.Resource
-import com.mka.fifa.world.cup2022.encyclopedia.domain.repository.get_groups.GetGroupsUseCase
-import com.mka.fifa.world.cup2022.encyclopedia.domain.repository.get_matches.GetMatchesUseCase
+import com.mka.fifa.world.cup2022.encyclopedia.domain.repository.old.get_groups.GetGroupsUseCase
+import com.mka.fifa.world.cup2022.encyclopedia.domain.repository.update.get_groups.GetUpdatedGroupsUseCase
 import com.mka.fifa.world.cup2022.encyclopedia.presentation.groups.components.GroupsState
-import com.mka.fifa.world.cup2022.encyclopedia.presentation.matches.components.MatchesState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -17,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GroupsViewModel @Inject constructor(
-    private val getGroupsUseCase: GetGroupsUseCase
+    private val getUpdatedGroupsUseCase: GetUpdatedGroupsUseCase
 ): ViewModel() {
 
     private val _state = mutableStateOf(GroupsState())
@@ -27,10 +26,10 @@ class GroupsViewModel @Inject constructor(
         getGroups()
     }
     private fun getGroups() {
-        getGroupsUseCase().onEach { result ->
+        getUpdatedGroupsUseCase().onEach { result ->
             when(result) {
                 is Resource.Success -> {
-                    _state.value = GroupsState(groups = result.data)
+                    _state.value = GroupsState(groups = result.data ?: emptyList())
                 }
                 is Resource.Error -> {
                     _state.value = GroupsState(error = result.message ?: Constants.HTTP_ERROR_TEXT)
@@ -41,6 +40,8 @@ class GroupsViewModel @Inject constructor(
             }
 
         }.launchIn(viewModelScope)
+
+
     }
 
 

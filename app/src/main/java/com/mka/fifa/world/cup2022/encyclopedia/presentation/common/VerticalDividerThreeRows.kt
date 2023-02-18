@@ -21,6 +21,8 @@ fun VerticalDividerThreeRows(
     screenSize2: Float,
     screenSize3: Float,
     style: TextStyle,
+    style2: TextStyle = TextStyle.Default,
+    style3: TextStyle = TextStyle.Default,
     color1: Color,
     color2: Color,
     color3: Color,
@@ -36,13 +38,13 @@ fun VerticalDividerThreeRows(
             .height(height)
             .background(Color.DarkGray.copy(alpha = 0.6f)),
         horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.Top
+        verticalAlignment = Alignment.Top,
     ) {
         ScreenText(title1, screenSize1, padding, style =  style, color =  color1, fontWeight = fontWeight, textDecoration = textDecoration)
         VerticalDivider(dividerColor)
-        ScreenText(title2, screenSize2, padding, style =  style, color =  color2, fontWeight = fontWeight, textDecoration = textDecoration)
+        ScreenText(title2, screenSize2, padding, style =  style2, color =  color2, fontWeight = fontWeight, textDecoration = textDecoration)
         VerticalDivider(dividerColor)
-        ScreenText(title3, screenSize3, padding, style =  style, color =  color3, fontWeight = fontWeight, textDecoration = textDecoration)
+        ScreenText(title3, screenSize3, padding, style =  style3, color =  color3, fontWeight = fontWeight, textDecoration = textDecoration)
 
     }
 }

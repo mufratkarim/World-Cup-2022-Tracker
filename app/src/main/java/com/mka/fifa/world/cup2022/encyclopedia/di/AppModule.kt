@@ -19,7 +19,7 @@ object AppModule {
     @Singleton
     fun providesWorldCupApi(): WorldCupApi {
         return Retrofit.Builder()
-            .baseUrl(Constants.WORLD_CUP_JSON)
+            .baseUrl(Constants.MY_WORLD_CUP_JSON)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WorldCupApi::class.java)
