@@ -6,7 +6,49 @@
 
 ---
 
-## Screenshots
+## Features
+
+- All Matches of FIFA World Cup 2022 Matches
+- Stats and Lineups of all the matches
+- Team Lists
+- Group Lists
+- Additional Links of players and their performance from Guardian.com
+
+---
+
+## Technologies
+
+Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagger - Hilt.
+
+## Installation
+
+[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
+alt="Get it on GitHub"
+height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/apk/world-cup-2022.apk?raw=true)
+
+## Updated Screenshots
+
+<div style="width:100%; display:flex; justify-content:space-between;">
+
+## Updated Demo Video
+
+![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/update-demo.gif)
+
+[<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss1.jpg" width=20% alt="1">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot1.jpg)
+[<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss2.jpg" width=20% alt="2">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot2.jpg)
+[<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss3.jpg" width=20% alt="3">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot3.jpg)
+
+</div>
+
+<div style="width:100%; display:flex; justify-content:space-between;">
+
+[<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss4.jpg" width=20% alt="5">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot5.jpg)
+[<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss5.jpg" width=20% alt="6">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot6.jpg)
+[<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss6.jpg" width=20% alt="7">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot7.jpg)
+
+</div>
+
+## OLD Screenshots
 
 <div style="width:100%; display:flex; justify-content:space-between;">
 
@@ -37,43 +79,6 @@
 
 ---
 
-## Features
-
-- All Matches of FIFA World Cup 2022 Matches
-- Stats and Lineups of all the matches
-- Team Lists
-- Group Lists
-- Additional Links of players and their performance from Guardian.com
-
----
-
-## Technologies
-
-Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagger - Hilt.
-
----
-
-## Activities
-
-• Utilized the Clean Architecture pattern and MVVM to compile readable, scalable and testable code in Kotlin.
-
-• Designed the application’s UI using Jetpack Compose, resulting in a 15% reduction in development time.
-
-• Implemented Navigation Components to complex navigation flows and transitions, leading to a 20% increase in user retention.
-
-• Applied Retrofit to make HTTP requests and handle responses like parsing of JSON data and error handling.
-
-• Enhanced code maintainability by using Dagger-hilt to streamline the management of app dependencies.
-
----
-
-## Demo Video
+## OLD Demo Video
 
 ![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/fifa_app_demo.gif)
-
-## Installation
-
-[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
-alt="Get it on GitHub"
-height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/apk/fifa2022v1.apk?raw=true)
-
