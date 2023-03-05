@@ -30,10 +30,6 @@ height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/bl
 
 <div style="width:100%; display:flex; justify-content:space-between;">
 
-## Updated Demo Video
-
-![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/update-demo.gif)
-
 [<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss1.jpg" width=20% alt="1">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot1.jpg)
 [<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss2.jpg" width=20% alt="2">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot2.jpg)
 [<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss3.jpg" width=20% alt="3">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot3.jpg)
@@ -47,6 +43,10 @@ height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/bl
 [<img src="https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/update-ss6.jpg" width=20% alt="7">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/images/Screenshot7.jpg)
 
 </div>
+
+## Updated Demo Video
+
+![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/update-demo.gif)
 
 ## OLD Screenshots
 
