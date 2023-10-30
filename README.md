@@ -20,13 +20,12 @@
 
 Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagger - Hilt.
 
-## Installation
+## Download
 
-[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
-alt="Get it on GitHub"
-height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/apk/world-cup-2022.apk?raw=true)
+- [Latest Version](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/apk/world-cup-2022.apk?raw=true)
+- [Version 1](https://github.com/mufratkarim/World-Cup-2022-Tracker/raw/main/apk/fifa2022v1.apk?raw=true)
 
-## Updated Screenshots
+## Latest
 
 <div style="width:100%; display:flex; justify-content:space-between;">
 
@@ -44,11 +43,11 @@ height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/bl
 
 </div>
 
-## Updated Demo Video
+## Latest Demo 
 
 ![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/update-demo.gif)
 
-## OLD Screenshots
+## Version 1 Screenshots
 
 <div style="width:100%; display:flex; justify-content:space-between;">
 
@@ -79,6 +78,6 @@ height="80">](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/bl
 
 ---
 
-## OLD Demo Video
+## Version 1 Demo 
 
 ![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/fifa_app_demo.gif)
