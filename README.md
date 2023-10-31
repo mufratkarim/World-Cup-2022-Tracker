@@ -45,7 +45,7 @@ Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagg
 
 ## Latest Demo 
 
-![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/update-demo.gif)
+![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/videos/update-demo.gif)
 
 ## Version 1 Screenshots
 
@@ -80,4 +80,4 @@ Kotlin, MVVM, ViewModel, Jetpack Compose, Navigation, Coroutines, Retrofit, Dagg
 
 ## Version 1 Demo 
 
-![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/fifa_app_demo.gif)
+![Video](https://github.com/mufratkarim/FIFA-World-Cup-2022-Encyclopedia/blob/main/videos/fifa_app_demo.gif)
